@@ -8,11 +8,11 @@
 
 namespace tinit {
 
-/// Subset of systemd unit types we support
 enum class UnitType : uint8_t {
     Service,
     Target,
     Mount,
+    Socket,
     Unknown,
 };
 
@@ -20,46 +20,58 @@ inline UnitType unit_type_from_suffix(std::string_view path) {
     if (path.ends_with(".service")) return UnitType::Service;
     if (path.ends_with(".target"))  return UnitType::Target;
     if (path.ends_with(".mount"))   return UnitType::Mount;
+    if (path.ends_with(".socket"))  return UnitType::Socket;
     return UnitType::Unknown;
 }
 
 /// Parsed representation of a systemd-compatible unit file
 struct UnitFile {
-    std::string name;          // e.g. "sshd.service"
-    std::string path;          // full path on disk
-    UnitType type = UnitType::Unknown;
+    std::string name;
+    std::string path;
+    UnitType    type = UnitType::Unknown;
 
-    // [Unit] section
-    std::string description;
-    std::vector<std::string> wants;           // Wants=
-    std::vector<std::string> requires_;       // Requires=
-    std::vector<std::string> after;           // After=
-    std::vector<std::string> before;          // Before=
-    std::vector<std::string> conflicts;       // Conflicts=
+    // [Unit]
+    std::string              description;
+    std::vector<std::string> wants;
+    std::vector<std::string> requires_;
+    std::vector<std::string> after;
+    std::vector<std::string> before;
+    std::vector<std::string> conflicts;
+    std::vector<std::string> part_of;       // PartOf=
+    std::vector<std::string> binds_to;      // BindsTo=
 
-    // [Service] section (only for .service)
-    std::string exec_start;                   // ExecStart=
-    std::string exec_stop;                    // ExecStop=
-    std::vector<std::string> exec_start_pre;  // ExecStartPre=
-    std::string type_str;                     // Type= (simple, forking, oneshot)
-    std::string restart_policy;               // Restart= (no, on-failure, always)
-    std::string user;                         // User=
-    std::string group;                        // Group=
-    std::string working_directory;            // WorkingDirectory=
-    std::unordered_map<std::string, std::string> environment; // Environment=
+    // [Service]
+    std::string exec_start;
+    std::string exec_stop;
+    std::string exec_reload;                // ExecReload=
+    std::vector<std::string> exec_start_pre;
+    std::vector<std::string> exec_start_post;
+    std::string type_str;                   // Type= (simple, forking, oneshot, notify, dbus, idle)
+    std::string restart_policy;             // Restart= (no, on-success, on-failure, on-abnormal, on-watchdog, on-abort, always)
+    std::string user;
+    std::string group;
+    std::string working_directory;
+    std::string runtime_directory;          // RuntimeDirectory=
+    std::string pid_file;                   // PIDFile= (for forking type)
+    std::unordered_map<std::string, std::string> environment;
 
-    // [Install] section
-    std::vector<std::string> wanted_by;       // WantedBy=
-    std::vector<std::string> required_by;     // RequiredBy=
-    std::string alias;                        // Alias=
+    // Restart rate-limiting (mirrors systemd defaults: 5 starts / 10 seconds)
+    int restart_limit_burst    = 5;         // StartLimitBurst=
+    int restart_limit_interval = 10;        // StartLimitIntervalSec=
 
-    // [Mount] section (only for .mount)
-    std::string what;          // What=
-    std::string where;         // Where=
-    std::string mount_type;    // Type=
-    std::string options;       // Options=
+    // [Install]
+    std::vector<std::string> wanted_by;
+    std::vector<std::string> required_by;
+    std::string alias;
 
-    // Raw storage for anything we don't parse
+    // [Mount]
+    std::string what;
+    std::string where;
+    std::string mount_type;
+    std::string options;
+    bool        lazy_unmount = false;       // LazyUnmount=
+
+    // Raw storage for anything not explicitly parsed
     std::unordered_map<std::string,
         std::unordered_map<std::string, std::string>> raw_sections;
 
