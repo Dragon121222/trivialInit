@@ -1,0 +1,1992 @@
+c[?7l[2J[0mSeaBIOS (version Arch Linux 1.17.0-2-2)
+
+
+iPXE (http://ipxe.org) 00:03.0 C900 PCI2.10 PnP PMM+3EFD3D90+3EF33D90 C900
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from ROM...
+Probing EDD (edd=off to disable)... oc[?7l[2J:: running early hook [udev]
+Starting systemd-udevd version 260.1-1-arch
+:: running hook [udev]
+:: Triggering uevents...
+:: running hook [keymap]
+:: Loading keymap...kbd_mode: KDSKBMODE: Inappropriate ioctl for device
+%Gdone.
+:: performing fsck on '/dev/vda1'
+/dev/vda1: recovering journal
+/dev/vda1: clean, 39260/262144 files, 315967/1048064 blocks
+********************** WARNING **********************
+*                                                   *
+*  The root device is not configured to be mounted  *
+*  read-write! It may be fsck'd again later.        *
+*                                                   *
+*****************************************************
+:: mounting '/dev/vda1' on real root
+:: running cleanup hook [udev]
+trivialInit: running as PID 1
+[INF] init: trivialInit starting
+[INF] fs: Mounting early virtual filesystems
+[INF] fs: Mounted proc on /proc
+[INF] fs: Mounted sysfs on /sys
+[INF] fs: Mounted devtmpfs on /dev
+[INF] fs: Mounted tmpfs on /dev/shm
+[INF] fs: Mounted devpts on /dev/pts
+[INF] fs: Mounted tmpfs on /run
+[INF] fs: Mounted cgroup2 on /sys/fs/cgroup
+[INF] signal: Setting up signal handling
+[INF] signal: Signal handling ready (signalfd + epoll)
+[INF] scanner: Scanning for unit files
+[INF] scanner: Discovered 277 unit files
+[INF] parser: Parsing unit files
+[INF] parser: Parsed 277 units
+[INF] executor: Resolving dependency graph
+[INF] executor: Execution order: 277 units
+[INF] executor: Executing units in dependency order
+[INF] executor: Starting service: systemd-udev-load-credentials.service (udevadm)
+[INF] process: Started systemd-udev-load-credentials.service (PID 169)
+[INF] executor: Starting service: systemd-journald@.service (/usr/lib/systemd/systemd-journald)
+[INF] process: Started systemd-journald@.service (PID 170)
+[INF] executor: Starting service: rfkill-unblock@.service (/usr/bin/rfkill)
+[INF] process: Started rfkill-unblock@.service (PID 171)
+[INF] executor: Reached target: cryptsetup-pre.target
+[INF] executor: Starting service: systemd-coredump@.service (/usr/lib/systemd/systemd-coredump)
+[INF] process: Started systemd-coredump@.service (PID 172)
+[INF] executor: Reached target: paths.target
+rfkill: invalid identifier: %I[INF] executor: Mounting tracefs on /sys/kernel/tracing
+
+[ERR] executor: mount sys-kernel-tracing.mount failed: Invalid argument
+[INF] executor: Reached target: veritysetup.target
+[INF] executor: Starting service: systemd-nsresourced.service (/usr/lib/systemd/systemd-nsresourced)
+[INF] process: Started systemd-nsresourced.service (PID 173)
+[INF] executor: Reached target: nss-user-lookup.target
+[INF] executor: Starting service: systemd-ask-password@.service (systemd-ask-password)
+[INF] process: Started systemd-ask-password@.service (PID 174)
+[INF] executor: Starting service: systemd-portabled.service (/usr/lib/systemd/systemd-portabled)
+[INF] process: Started systemd-portabled.service (PID 175)
+[INF] executor: Starting service: e2scrub_reap.service (/usr/bin/e2scrub_all)
+[INF] process: Started e2scrub_reap.service (PID 176)
+[0;1;31mSpecified namespace name not valid, refusing: %i[0m
+[0;1;31mbpf-lsm support not available, as securityfs is not mounted.[0m
+[0;1;39mProceeding with user namespace interfaces disabled.[0m
+[INF] executor: Reached target: sigpwr.target
+[INF] executor: Starting service: systemd-battery-check.service (/usr/lib/systemd/systemd-battery-check)
+[INF] process: Started systemd-battery-check.service (PID 180)
+[INF] executor: Mounting binfmt_misc on /proc/sys/fs/binfmt_misc
+[ERR] executor: mount proc-sys-fs-binfmt_misc.mount failed: Invalid argument
+[INF] executor: Reached target: cryptsetup.target
+[INF] executor: Starting service: kmod-static-nodes.service (/usr/bin/kmod)
+[INF] process: Started kmod-static-nodes.service (PID 181)
+[INF] executor: Starting service: systemd-validatefs@.service (/usr/lib/systemd/systemd-validatefs)
+[INF] process: Started systemd-validatefs@.service (PID 184)
+[INF] executor: Reached target: getty-pre.target
+[INF] executor: Starting service: systemd-hibernate-resume.service (/usr/lib/systemd/systemd-hibernate-resume)
+[INF] process: Started systemd-hibernate-resume.service (PID 185)
+[INF] executor: Starting service: uuidd.service (/usr/bin/uuidd)
+[INF] process: Started uuidd.service (PID 187)
+[INF] executor: Starting service: nftables.service (/usr/bin/nft)
+[0;1;31mFailed to open directory '%f': No such file or directory[0m
+[0;1;31mNot running in initrd, refusing to initiate resume from hibernation.[0m
+[INF] process: Started nftables.service (PID 188)
+[INF] executor: Starting service: dbus-org.freedesktop.timedate1.service (/usr/lib/systemd/systemd-timedated)
+[INF] process: Started dbus-org.freedesktop.timedate1.service (PID 189)
+[INF] executor: Starting service: dbus-org.freedesktop.machine1.service (/usr/lib/systemd/systemd-machined)
+[INF] process: Started dbus-org.freedesktop.machine1.service (PID 190)
+[INF] executor: Starting service: dbus-org.freedesktop.locale1.service (/usr/lib/systemd/systemd-localed)
+[INF] process: Started dbus-org.freedesktop.locale1.service (PID 191)
+[INF] executor: Mounting mqueue on /dev/mqueue
+[ERR] executor: mount dev-mqueue.mount failed: Invalid argument
+[INF] executor: Starting service: systemd-machined.service (/usr/lib/systemd/systemd-machined)
+[INF] process: Started systemd-machined.service (PID 192)
+[INF] executor: Starting service: dbus-broker.service (/usr/bin/dbus-broker-launch)
+uuidd: no file descriptors received, check systemctl status uuidd.socket
+[0;1;31mFailed to get system bus connection: No such file or directory[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+e2scrub_all: can't find lvcreate --- is lvm2 installed?
+[INF] process: Started dbus-broker.service (PID 193)
+[INF] executor: Starting service: systemd-journal-gatewayd.service (/usr/lib/systemd/systemd-journal-gatewayd)
+[INF] process: Started systemd-journal-gatewayd.service (PID 195)
+[INF] executor: Starting service: systemd-network-generator.service (/usr/lib/systemd/systemd-network-generator)
+[INF] process: Started systemd-network-generator.service (PID 196)
+[INF] executor: Starting service: systemd-modules-load.service (/usr/lib/systemd/systemd-modules-load)
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+No listener socket inherited
+[0;1;31mFailed to get system bus connection: No such file or directory[0m
+/usr/lib/systemd/systemd-journal-gatewayd: error while loading shared libraries: libmicrohttpd.so.12: cannot open shared object file: No such file or directory
+[INF] process: Started systemd-modules-load.service (PID 197)
+[INF] executor: Starting service: rfkill-block@.service (/usr/bin/rfkill)
+[INF] process: Started rfkill-block@.service (PID 198)
+[INF] executor: Mounting debugfs on /sys/kernel/debug
+rfkill: invalid identifier: %I
+[INF] executor: Starting service: systemd-hostnamed.service (/usr/lib/systemd/systemd-hostnamed)
+[INF] process: Started systemd-hostnamed.service (PID 199)
+[INF] executor: Starting service: systemd-creds@.service (systemd-creds)
+[INF] process: Started systemd-creds@.service (PID 200)
+[INF] executor: Starting service: initrd-switch-root.service (systemctl)
+[0;1;31mFailed to get system bus connection: No such file or directory[0m
+[INF] process: Started initrd-switch-root.service (PID 201)
+[INF] executor: Reached target: slices.target
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] executor: Starting service: keyboxd@.service (/usr/lib/gnupg/keyboxd)
+[0;1;31mNot in initrd, refusing switch-root operation.[0m
+[INF] process: Started keyboxd@.service (PID 202)
+[INF] executor: Reached target: usb-gadget.target
+[INF] executor: Starting service: systemd-timedated.service (/usr/lib/systemd/systemd-timedated)
+[INF] process: Started systemd-timedated.service (PID 205)
+[INF] executor: Starting service: systemd-loop@.service (systemd-dissect)
+[INF] process: Started systemd-loop@.service (PID 206)
+[INF] executor: Starting service: dbus-org.freedesktop.sysupdate1.service (/usr/lib/systemd/systemd-sysupdated)
+[0;1;31mNo credentials passed. (i.e. $CREDENTIALS_DIRECTORY not set.)[0m
+keyboxd[202]: [INF] process: Started dbus-org.freedesktop.sysupdate1.service (PID 207)
+[INF] executor: Starting service: systemd-rfkill.service (/usr/lib/systemd/systemd-rfkill)
+[0;1;31mFailed to stat /%f: No such file or directory[0m
+[0;1;31mFailed to get system bus connection: No such file or directory[0m
+file descriptor 3 must be validin --supervised mode
+[0;1;31mFailed to allocate manager object: No such file or directory[0m
+[INF] process: Started systemd-rfkill.service (PID 208)
+[INF] executor: Reached target: time-set.target
+[INF] executor: Reached target: imports-pre.target
+[INF] executor: Reached target: integritysetup-pre.target
+[INF] executor: Reached target: sockets.target
+[INF] executor: Reached target: nss-lookup.target
+[INF] executor: Reached target: umount.target
+[INF] executor: Starting service: systemd-sysext-initrd.service (systemd-sysext)
+[INF] process: Started systemd-sysext-initrd.service (PID 209)
+[INF] executor: Reached target: swap.target
+[INF] executor: Reached target: smartcard.target
+[INF] executor: Reached target: first-boot-complete.target
+[INF] executor: Starting service: dbus-org.freedesktop.portable1.service (/usr/lib/systemd/systemd-portabled)
+[INF] process: Started dbus-org.freedesktop.portable1.service (PID 210)
+[INF] executor: Reached target: initrd-root-fs.target
+[INF] executor: Reached target: imports.target
+[INF] executor: Starting service: gpg-agent@.service (/usr/bin/gpg-agent)
+[INF] process: Started gpg-agent@.service (PID 211)
+[INF] executor: Starting service: systemd-time-wait-sync.service (/usr/lib/systemd/systemd-time-wait-sync)
+[INF] process: Started systemd-time-wait-sync.service (PID 213)
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+No extensions found.
+[INF] executor: Reached target: getty.target
+[INF] executor: Starting service: systemd-confext-initrd.service (systemd-confext)
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+adjtime state 5 status 40 time Tue 2026-04-14 21:00:15.350295 UTC
+gpg-agent (GnuPG) 2.4.9 starting in supervised mode.
+no LISTEN_PID environment variable found in --supervised mode (ignoring)
+[INF] process: Started systemd-confext-initrd.service (PID 216)
+[INF] executor: Starting service: e2scrub_fail@.service (/usr/lib/e2fsprogs/e2scrub_fail)
+[INF] process: Started e2scrub_fail@.service (PID 217)
+no LISTEN_FDS or LISTEN_FDNAMES environment variables found in --supervised mode (assuming 1 active descriptor)
+Fatal: file descriptor 3 must be valid in --supervised mode if LISTEN_FDNAMES is not set
+[INF] executor: Starting service: krb5-kpropd@.service (/usr/bin/kpropd)
+/usr/lib/e2fsprogs/e2scrub_fail: sendmail program not found.
+No extensions found.
+[INF] process: Started krb5-kpropd@.service (PID 222)
+[INF] executor: Starting service: mkinitcpio-generate-shutdown-ramfs.service (/usr/bin/mkinitcpio)
+[INF] process: Started mkinitcpio-generate-shutdown-ramfs.service (PID 223)
+[INF] executor: Reached target: initrd-root-device.target
+[INF] executor: Starting service: emergency.service (/usr/lib/systemd/systemd-sulogin-shell)
+[INF] process: Started emergency.service (PID 224)
+[INF] executor: Starting service: systemd-sysupdated.service (/usr/lib/systemd/systemd-sysupdated)
+[INF] process: Started systemd-sysupdated.service (PID 225)
+[INF] executor: Starting service: systemd-sysupdate-reboot.service (/usr/lib/systemd/systemd-sysupdate)
+[INF] process: Started systemd-sysupdate-reboot.service (PID 226)
+[INF] executor: Mounting hugetlbfs on /dev/hugepages
+[ERR] executor: mount dev-hugepages.mount failed: Invalid argument
+You are in emergency mode. After logging in, type "journalctl -xb" to view
+system logs, "systemctl reboot" to reboot, or "exit"
+to continue bootup.
+[0;1;31mFailed to allocate manager object: No such file or directory[0m
+[INF] executor: Starting service: systemd-localed.service (/usr/lib/systemd/systemd-localed)
+[0;1;31mNo transfer definitions found.[0m
+==> ERROR: Invalid option -c -- '/run/initramfs/mkinitcpio-shutdown.conf' must be readable
+[INF] process: Started systemd-localed.service (PID 230)
+[INF] executor: Reached target: initrd-usr-fs.target
+[INF] executor: Starting service: systemd-tmpfiles-setup-dev-early.service (systemd-tmpfiles)
+[INF] process: Started systemd-tmpfiles-setup-dev-early.service (PID 231)
+[INF] executor: Starting service: systemd-quotacheck@.service (/usr/lib/systemd/systemd-quotacheck)
+[INF] process: Started systemd-quotacheck@.service (PID 232)
+[INF] executor: Starting service: dbus.service (/usr/bin/dbus-broker-launch)
+[0;1;31mFailed to get system bus connection: No such file or directory[0m
+No listener socket inherited
+[INF] process: Started dbus.service (PID 233)
+[INF] executor: Reached target: factory-reset.target
+[INF] executor: Starting service: systemd-boot-clear-sysfail.service (bootctl)
+[INF] process: Started systemd-boot-clear-sysfail.service (PID 234)
+[INF] executor: Starting service: systemd-hibernate-clear.service (/usr/lib/systemd/systemd-hibernate-resume)
+[INF] process: Started systemd-hibernate-clear.service (PID 235)
+[INF] executor: Reached target: rpcbind.target
+[INF] executor: Starting service: dbus-org.freedesktop.hostname1.service (/usr/lib/systemd/systemd-hostnamed)
+[0;1;31mNot booted with UEFI.[0m
+[INF] process: Started dbus-org.freedesktop.hostname1.service (PID 236)
+[INF] executor: Reached target: printer.target
+[INF] executor: Starting service: systemd-userdbd.service (/usr/lib/systemd/systemd-userdbd)
+[INF] process: Started systemd-userdbd.service (PID 237)
+[INF] executor: Reached target: timers.target
+[INF] executor: Starting service: systemd-journalctl@.service (journalctl)
+[0;1;31mFailed to get system bus connection: No such file or directory[0m
+[INF] process: Started systemd-journalctl@.service (PID 241)
+[INF] executor: Starting service: e2scrub@.service (/usr/bin/e2scrub)
+[INF] process: Started e2scrub@.service (PID 242)
+[INF] executor: Reached target: machines.target
+[INF] executor: Reached target: ssh-access.target
+[INF] executor: Starting service: systemd-mountfsd.service (/usr/lib/systemd/systemd-mountfsd)
+[INF] process: Started systemd-mountfsd.service (PID 243)
+[INF] executor: Starting service: systemd-backlight@.service (/usr/lib/systemd/systemd-backlight)
+[INF] process: Started systemd-backlight@.service (PID 244)
+[INF] executor: Starting service: systemd-journal-remote.service (/usr/lib/systemd/systemd-journal-remote)
+/usr/lib/systemd/systemd-journal-remote: error while loading shared libraries: libmicrohttpd.so.12: cannot open shared object file: No such file or directory
+e2scrub: can't find lvcreate --- is lvm2 installed?
+[INF] process: Started systemd-journal-remote.service (PID 245)
+[INF] executor: Reached target: sound.target
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 246)
+[INF] executor: Starting service: quotaon@.service (/usr/bin/quotaon)
+[INF] process: Started quotaon@.service (PID 247)
+[INF] executor: Starting service: e2scrub_all.service (/usr/bin/e2scrub_all)
+[INF] process: Started e2scrub_all.service (PID 248)
+[INF] executor: Reached target: local-fs-pre.target
+[INF] executor: Starting service: fstrim.service (/usr/bin/fstrim)
+[INF] process: Started fstrim.service (PID 253)
+[INF] executor: Reached target: network-pre.target
+[INF] executor: Starting service: ebtables.service (/bin/sh)
+[0;1;31mRequires a subsystem and sysname pair specifying a backlight or LED device.[0m
+-- No entries --
+e2scrub_all: can't find lvcreate --- is lvm2 installed?
+[INF] process: Started ebtables.service (PID 254)
+[INF] executor: Starting service: krb5-kpropd.service (/usr/bin/kpropd)
+[INF] process: Started krb5-kpropd.service (PID 255)
+[INF] executor: Reached target: integritysetup.target
+[INF] executor: Reached target: sleep.target
+[INF] executor: Reached target: blockdev@.target
+[INF] executor: Starting service: modprobe@.service (modprobe)
+[INF] process: Started modprobe@.service (PID 256)
+[INF] executor: Starting service: systemd-factory-reset@.service (/usr/lib/systemd/systemd-factory-reset)
+[INF] process: Started systemd-factory-reset@.service (PID 257)
+[INF] executor: Reached target: remote-fs-pre.target
+[INF] executor: Starting service: dirmngr@.service (/usr/bin/dirmngr)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+<: -c: line 1: unexpected EOF while looking for matching `''
+[INF] process: Started dirmngr@.service (PID 258)
+[INF] executor: Starting service: iptables.service (/usr/bin/iptables-restore)
+[INF] process: Started iptables.service (PID 259)
+[INF] executor: Reached target: tpm2.target
+[INF] executor: Reached target: bluetooth.target
+[INF] executor: Reached target: factory-reset-now.target
+[INF] executor: Starting service: systemd-vconsole-setup.service (/usr/lib/systemd/systemd-vconsole-setup)
+unspecified
+[INF] process: Started systemd-vconsole-setup.service (PID 260)
+[INF] executor: Starting service: systemd-pstore.service (/usr/lib/systemd/systemd-pstore)
+[INF] process: Started systemd-pstore.service (PID 262)
+[INF] executor: Starting service: systemd-journald.service (/usr/lib/systemd/systemd-journald)
+[INF] process: Started systemd-journald.service (PID 263)
+[INF] executor: Starting service: systemd-udev-trigger.service (udevadm)
+[INF] process: Started systemd-udev-trigger.service (PID 264)
+[INF] executor: Starting service: systemd-fsck-root.service (/usr/lib/systemd/systemd-fsck)
+[INF] process: Started systemd-fsck-root.service (PID 266)
+[INF] executor: Starting service: krb5-kadmind.service (/usr/bin/kadmind)
+[INF] process: Started krb5-kadmind.service (PID 267)
+[INF] executor: Mounting configfs on /sys/kernel/config
+Collecting audit messages is enabled.
+[ERR] executor: mount sys-kernel-config.mount failed: Invalid argument
+[INF] executor: Reached target: veritysetup-pre.target
+dirmngr[258]: file descriptor 3 must be validin --supervised mode
+[INF] executor: Starting service: dm-event.service (/usr/bin/dmeventd)
+kadmind: Cannot open DB2 database '/usr/local/var/krb5kdc/principal': No such file or directory while initializing, aborting
+[INF] process: Started dm-event.service (PID 271)
+[INF] executor: Mounting fusectl on /sys/fs/fuse/connections
+[ERR] executor: mount sys-fs-fuse-connections.mount failed: Invalid argument
+[INF] executor: Starting service: systemd-mute-console@.service (systemd-mute-console)
+[0;1;39mConfiguration of first virtual console was skipped, ignoring remaining ones.[0m
+[INF] process: Started systemd-mute-console@.service (PID 273)
+[INF] executor: Starting service: arptables.service (/bin/sh)
+[INF] process: Started arptables.service (PID 277)
+[INF] executor: Mounting /var/lib/machines.raw on /var/lib/machines
+Press Enter for system maintenance
+(or press Control-D to continue): [0;1;31mFailed to connect to systemd: No such file or directory[0m
+<: -c: line 1: unexpected EOF while looking for matching `''
+[ERR] executor: mount var-lib-machines.mount failed: Invalid argument
+[INF] executor: Reached target: shutdown.target
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started systemd-logind.service (PID 278)
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 279)
+[INF] executor: Starting service: systemd-bsod.service (/usr/lib/systemd/systemd-bsod)
+[INF] process: Started systemd-bsod.service (PID 280)
+[INF] executor: Starting service: systemd-sysctl.service (/usr/lib/systemd/systemd-sysctl)
+[INF] process: Started systemd-sysctl.service (PID 281)
+[INF] executor: Reached target: time-sync.target
+[INF] executor: Mounting tmpfs on /tmp
+[ERR] executor: mount tmp.mount failed: Invalid argument
+[INF] executor: Starting service: initrd-parse-etc.service (/usr/lib/systemd/systemd-sysroot-fstab-check)
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: Started initrd-parse-etc.service (PID 282)
+[INF] executor: Reached target: emergency.target
+[INF] executor: Starting service: systemd-tmpfiles-setup-dev.service (systemd-tmpfiles)
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mThis program is only useful in the initrd.[0m
+/dev/vda1: clean, 39260/262144 files, 315967/1048064 blocks
+[INF] process: Started systemd-tmpfiles-setup-dev.service (PID 283)
+[INF] executor: Starting service: systemd-homed.service (/usr/lib/systemd/systemd-homed)
+[INF] process: Started systemd-homed.service (PID 285)
+[INF] executor: Reached target: local-fs.target
+[INF] executor: Reached target: network.target
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:12: Failed to resolve group 'audio': Unknown group[0m
+[INF] executor: Starting service: systemd-suspend.service (/usr/lib/systemd/systemd-sleep)
+[INF] process: Started systemd-suspend.service (PID 287)
+[INF] executor: Starting service: systemd-hybrid-sleep.service (/usr/lib/systemd/systemd-sleep)
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:13: Failed to resolve group 'audio': Unknown group[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:14: Failed to resolve group 'disk': Unknown group[0m
+[INF] process: Started systemd-hybrid-sleep.service (PID 288)
+[INF] executor: Starting service: systemd-suspend-then-hibernate.service (/usr/lib/systemd/systemd-sleep)
+[INF] process: Started systemd-suspend-then-hibernate.service (PID 289)
+[INF] executor: Starting service: systemd-hibernate.service (/usr/lib/systemd/systemd-sleep)
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:18: Failed to resolve group 'kvm': Unknown group[0m
+[0;1;31mFailed to open connection to systemd: No such file or directory[0m
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:19: Failed to resolve group 'kvm': Unknown group[0m
+[0;1;31mFailed to open connection to systemd: No such file or directory[0m
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:20: Failed to resolve group 'kvm': Unknown group[0m
+[INF] process: Started systemd-hibernate.service (PID 290)
+[INF] executor: Reached target: remote-cryptsetup.target
+[INF] executor: Reached target: remote-integritysetup.target
+[INF] executor: Reached target: remote-fs.target
+[INF] executor: Starting service: ip6tables.service (/usr/bin/ip6tables-restore)
+[INF] process: Started ip6tables.service (PID 291)
+[INF] executor: Starting service: systemd-pcrphase-initrd.service (/usr/lib/systemd/systemd-pcrextend)
+[INF] process: Started systemd-pcrphase-initrd.service (PID 292)
+[INF] executor: Starting service: systemd-pcrphase-factory-reset.service (/usr/lib/systemd/systemd-pcrextend)
+[0;1;31mFailed to open connection to systemd: No such file or directory[0m
+[0;1;31mFailed to open connection to systemd: No such file or directory[0m
+[INF] process: Started systemd-pcrphase-factory-reset.service (PID 293)
+[INF] executor: Starting service: systemd-pcrphase-storage-target-mode.service (/usr/lib/systemd/systemd-pcrextend)
+[INF] process: Started systemd-pcrphase-storage-target-mode.service (PID 294)
+[INF] executor: Starting service: systemd-pcrextend@.service (/usr/lib/systemd/systemd-pcrextend)
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group::r-x,d:group:adm:r-x,d:group:wheel:r-x,group::r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group:adm:r-x,d:group:wheel:r-x,group:adm:r-X,group:wheel:r-X", ignoring: Invalid argument[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group::r-x,d:group:adm:r-x,d:group:wheel:r-x,group::r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+[INF] process: Started systemd-pcrextend@.service (PID 295)
+[INF] executor: Starting service: systemd-pcrmachine.service (/usr/lib/systemd/systemd-pcrextend)
+[INF] process: Started systemd-pcrmachine.service (PID 296)
+[INF] executor: Starting service: systemd-pcrproduct.service (/usr/lib/systemd/systemd-pcrextend)
+[INF] process: Started systemd-pcrproduct.service (PID 297)
+[INF] executor: Starting service: systemd-factory-reset-complete.service (/usr/lib/systemd/systemd-factory-reset)
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group:adm:r-x,d:group:wheel:r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "group:adm:r--,group:wheel:r--", ignoring: Invalid argument[0m
+[INF] process: Started systemd-factory-reset-complete.service (PID 298)
+[INF] executor: Starting service: breakpoint-pre-udev.service (/bin/sh)
+[INF] process: Started breakpoint-pre-udev.service (PID 299)
+[INF] executor: Starting service: debug-shell.service (/bin/sh)
+[INF] process: Started debug-shell.service (PID 300)
+[INF] executor: Starting service: systemd-ask-password-console.service (systemd-tty-ask-password-agent)
+[0;1;31mExpected a single argument.[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "default:group:tss:rwx", ignoring: Invalid argument[0m
+sh: cannot set terminal process group (-1): Inappropriate ioctl for device
+sh: no job control in this shell
+sh: cannot set terminal process group (-1): Inappropriate ioctl for device
+sh: no job control in this shell
+[INF] process: Started systemd-ask-password-console.service (PID 301)
+[INF] executor: Starting service: systemd-udev-settle.service (udevadm)
+[INF] process: Started systemd-udev-settle.service (PID 302)
+[INF] executor: Starting service: systemd-fsck@.service (/usr/lib/systemd/systemd-fsck)
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+Attempted to leave factory reset mode, even though we are not in factory reset mode. Ignoring.
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "default:group:tss:rwx", ignoring: Invalid argument[0m
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[INF] process: Started systemd-fsck@.service (PID 303)
+[INF] executor: Starting service: systemd-remount-fs.service (/usr/lib/systemd/systemd-remount-fs)
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;31mFailed to stat %f: No such file or directory[0m
+[INF] process: Started systemd-remount-fs.service (PID 304)
+[INF] executor: Reached target: remote-veritysetup.target
+[INF] executor: Reached target: final.target
+[INF] executor: Starting service: user-runtime-dir@.service (/usr/lib/systemd/systemd-user-runtime-dir)
+[INF] process: Started user-runtime-dir@.service (PID 305)
+[INF] executor: Reached target: initrd-fs.target
+[INF] executor: Starting service: systemd-homed-firstboot.service (homectl)
+[INF] process: Started systemd-homed-firstboot.service (PID 306)
+[INF] executor: Starting service: systemd-update-done.service (/usr/lib/systemd/systemd-update-done)
+[INF] process: Started systemd-update-done.service (PID 308)
+[INF] executor: Starting service: systemd-userdb-load-credentials.service (userdbctl)
+[INF] process: Started systemd-userdb-load-credentials.service (PID 309)
+[INF] executor: Starting service: systemd-machine-id-commit.service (systemd-machine-id-setup)
+[INF] process: Started systemd-machine-id-commit.service (PID 311)
+[INF] executor: Starting service: systemd-sysext.service (systemd-sysext)
+[INF] process: Started systemd-sysext.service (PID 312)
+[INF] executor: Starting service: systemd-tmpfiles-clean.service (systemd-tmpfiles)
+[INF] process: Started systemd-tmpfiles-clean.service (PID 313)
+[INF] executor: Reached target: sysinit.target
+[INF] executor: Starting service: systemd-bootctl@.service (bootctl)
+[INF] process: Started systemd-bootctl@.service (PID 314)
+[INF] executor: Starting service: lastlog2-import.service (/usr/bin/lastlog2)
+[INF] process: Started lastlog2-import.service (PID 316)
+[INF] executor: Starting service: systemd-confext.service (systemd-confext)
+[INF] process: Started systemd-confext.service (PID 317)
+[INF] executor: Starting service: systemd-binfmt.service (/usr/lib/systemd/systemd-binfmt)
+[INF] process: Started systemd-binfmt.service (PID 3[!p]104\[0m[?7h[1G[0J[H[2J[1;1H[0;44;1;37m[K
+[0;44;1;37m     Create a User Account[K
+[0;44;1;37m[K
+[0m[K[21;1H[0m[K
+[0;44;1;37m[K
+[0;44;1;37m    [0;38;2;23;147;209m Arch Linux [0;44;1;37m - See ]8;;https://wiki.archlinux.org/\documentation]8;;\ for more information.[K
+[0;44;1;37m[K[0m[5;20r[5;1H[?2004hsh-5.3# [?2004hsh-5.3# Couldn't find EFI system partition, skipping.
+/var/lib/pcrlock.d/820-machine-id.pcrlock written.
+HIERARCHY EXTENSIONS SINCE
+/opt      [0;90m[0;38:5:245mnone      [0m [0;90m[0;38:5:245m-    [0m
+/usr      [0;90m[0;38:5:245mnone      [0m [0;90m[0;38:5:245m-    [0m
+sh: cannot set terminal process group (-1): Inappropriate ioctl for device
+sh: no job control in this shell
+[0;1;31mFailed to resolve user '%i': Unknown user[0m
+[INF] process: Started getty@.service (PID 352)
+[INF] executor: Starting service: autovt@.service (/usr/bin/agetty)
+[INF] process: Started autovt@.service (PID 362)
+[INF] executor: Starting service: serial-getty@.service (/usr/bin/agetty)
+[INF] process: Started serial-getty@.service (PID 363)
+No extensions found.
+Please create your user account!
+
+[0;1;39m‣ Please enter user name to create (empty to skip): [0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;39mKernel entropy pool is not initialized yet, waiting until it is.[0m
+[0;1;31mThe configfs filesystem must be mounted at /sys/kernel/config/ to be able to use systemd-storagetm[0m
+You are in rescue mode. After logging in, type "journalctl -xb" to view
+system logs, "systemctl reboot" to reboot, or "exit"
+to continue bootup.
+Creating group 'sys' with GID 3.
+No extensions found.
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;31mNo transfer definitions found.[0m
+[0;1;31m/usr/lib/tmpfiles.d/shadow.conf:1: Failed to resolve group 'groups': Unknown group[0m
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;31mInvalid machine name: %i[0m
+/var/lib/pcrlock.d/830-root-file-system.pcrlock written.
+[INF] executor: Starting service: console-getty.service (/usr/bin/agetty)
+[INF] process: Started console-getty.service (PID 367)
+[INF] executor: Starting service: systemd-repart@.service (systemd-repart)
+[0mCreating group 'mem' with GID 8.
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;31mNot an EFI boot, requesting factory reset via EFI variable not supported.[0m
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:12: Failed to resolve group 'audio': Unknown group[0m
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] process: Started systemd-repart@.service (PID 368)
+Creating group 'ftp' with GID 11.
+Press Enter for system maintenance
+(or press Control-D to continue): [0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:13: Failed to resolve group 'audio': Unknown group[0m
+[INF] executor: Starting service: systemd-tpm2-setup.service (/usr/lib/systemd/systemd-tpm2-setup)
+[INF] process: Started systemd-tpm2-setup.service (PID 371)
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:14: Failed to resolve group 'disk': Unknown group[0m
+[?2004hsh-5.3# Creating group 'mail' with GID 12.
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[INF] executor: Starting service: systemd-repart.service (systemd-repart)
+[INF] process: Started systemd-repart.service (PID 373)
+[INF] executor: Starting service: systemd-pcrfs@.service (/usr/lib/systemd/systemd-pcrextend)
+[INF] process: Started systemd-pcrfs@.service (PID 374)
+TYPE          LABEL   UUID                                 PART FILE   RAW SIZE     SIZE   PADDING
+linux-generic primary af52d6ce-f4b3-4c10-838a-cd601014e298    0 [0;90m[0;38:5:245m    [0m 4292870144     3.9G     1004K
+[0;90m[0;38:5:245m             [0m [0;90m[0;38:5:245m       [0m [0;90m[0;38:5:245m                                    [0m [0;90m[0;38:5:245m    [0m [0;90m[0;38:5:245m    [0m [0;90m[0;38:5:245m          [0m Σ = 3.9G Σ = 1004K
+
+ [0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0m░[0m
+ └─ primary                                                                    
+
+No changes.
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:18: Failed to resolve group 'kvm': Unknown group[0m
+Creating group 'log' with GID 19.
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 375)
+[INF] executor: Starting service: shadow.service (/bin/sh)
+[INF] process: Started shadow.service (PID 376)
+[INF] executor: Starting service: systemd-oomd.service (/usr/lib/systemd/systemd-oomd)
+[0;1;31mFailed to open path '/%f': No such file or directory[0m
+[INF] process: Started systemd-oomd.service (PID 377)
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 378)
+[INF] executor: Starting service: systemd-tmpfiles-setup.service (systemd-tmpfiles)
+[INF] process: Started systemd-tmpfiles-setup.service (PID 379)
+[INF] executor: Starting service: systemd-udevd.service (/usr/lib/systemd/systemd-udevd)
+[INF] process: Started systemd-udevd.service (PID 380)
+[INF] executor: Starting service: quotaon-root.service (/usr/bin/quotaon)
+[INF] process: Started quotaon-root.service (PID 381)
+TYPE          LABEL   UUID               PART FILE   RAW SIZE     SIZE   PADDING
+linux-generic primary af52d6ce-f4b3-4c1…    0 [0;90m[0;38:5:245m    [0m 4292870144     3.9G     1004K
+[0;90m[0;38:5:245m             [0m [0;90m[0;38:5:245m       [0m [0;90m[0;38:5:245m                  [0m [0;90m[0;38:5:245m    [0m [0;90m[0;38:5:245m    [0m [0;90m[0;38:5:245m          [0m Σ = 3.9G Σ = 1004K
+
+Creating group 'smmsp' with GID 25.
+[INF] executor: Starting service: systemd-journal-flush.service (journalctl)
+[INF] process: Started systemd-journal-flush.service (PID 384)
+[INF] executor: Starting service: systemd-boot-random-seed.service (bootctl)
+[INF] process: Started systemd-boot-random-seed.service (PID 385)
+[INF] executor: Reached target: halt.target
+[INF] executor: Reached target: soft-reboot.target
+-qr: -c: line 1: unexpected EOF while looking for matching `''
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+ [0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0;32m▒[0m░[0m
+ └─ primary                                                                    
+
+No changes.
+[0;1;33m[0;1;38:5:185mNo swap; memory pressure usage will be degraded[0m
+[0;1;31mFailed to connect to /run/systemd/io.systemd.ManagedOOM: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+Received client request to flush runtime journal.
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[0;1;39mNo ESP found, not initializing random seed.[0m
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:19: Failed to resolve group 'kvm': Unknown group[0m
+Creating group 'proc' with GID 26.
+Using default interface naming scheme 'v260'.
+[0;1;31m/usr/lib/tmpfiles.d/static-nodes-permissions.conf:20: Failed to resolve group 'kvm': Unknown group[0m
+[INF] executor: Reached target: poweroff.target
+[INF] executor: Reached target: exit.target
+[0;1;31m/usr/lib/tmpfiles.d/shadow.conf:1: Failed to resolve group 'groups': Unknown group[0m
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:10: Failed to resolve user 'systemd-network': Unknown user[0m
+Creating group 'games' with GID 50.
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:10: Failed to resolve user 'systemd-network': Unknown user[0m
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:11: Failed to resolve user 'systemd-network': Unknown user[0m
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:11: Failed to resolve user 'systemd-network': Unknown user[0m
+[INF] executor: Reached target: ctrl-alt-del.target
+[INF] executor: Reached target: reboot.target
+[INF] executor: Reached target: kexec.target
+[INF] executor: Reached target: rescue.target
+[INF] executor: Reached target: system-update.target
+[INF] executor: Starting service: breakpoint-pre-mount.service (/bin/sh)
+[INF] process: Started breakpoint-pre-mount.service (PID 388)
+[INF] executor: Starting service: systemd-bless-boot.service (/usr/lib/systemd/systemd-bless-boot)
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:12: Failed to resolve user 'systemd-network': Unknown user[0m
+[INF] process: Started systemd-bless-boot.service (PID 389)
+[INF] executor: Starting service: systemd-pcrlock-firmware-code.service (/usr/lib/systemd/systemd-pcrlock)
+[INF] process: Started systemd-pcrlock-firmware-code.service (PID 391)
+[INF] executor: Starting service: systemd-pcrlock-secureboot-authority.service (/usr/lib/systemd/systemd-pcrlock)
+[INF] process: Started systemd-pcrlock-secureboot-authority.service (PID 392)
+[INF] executor: Starting service: systemd-pcrlock@.service (/usr/lib/systemd/systemd-pcrlock)
+[INF] process: Started systemd-pcrlock@.service (PID 393)
+[INF] executor: Starting service: systemd-pcrlock-secureboot-policy.service (/usr/lib/systemd/systemd-pcrlock)
+[INF] process: Started systemd-pcrlock-secureboot-policy.service (PID 394)
+[INF] executor: Starting service: systemd-pcrnvdone.service (/usr/lib/systemd/systemd-pcrextend)
+Creating group 'lock' with GID 54.
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:13: Failed to resolve user 'systemd-network': Unknown user[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:13 Failed to resolve group 'clock', ignoring: Unknown group[0m
+File /var/log/journal/c2f4b5e14b0645f9b56f2251daadbd46/system.journal corrupted or uncleanly shut down, renaming and replacing.
+sh: cannot set terminal process group (-1): Inappropriate ioctl for device
+sh: no job control in this shell
+[0;1;31mMarking a boot is only supported on EFI systems.[0m
+SecureBoot disabled, not generating authority .pcrlock file.
+/var/lib/pcrlock.d/620-secureboot-authority.pcrlock.d/generated.pcrlock already deleted.
+Creating group 'network' with GID 90.
+[0;1;31mFailed to open TPM2 event log '/sys/kernel/security/tpm0/binary_bios_measurements': No such file or directory[0m
+[0;1;31mFailed to open TPM2 event log '/sys/kernel/security/tpm0/binary_bios_measurements': No such file or directory[0m
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:23: Failed to resolve group 'systemd-journal': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:34 Failed to resolve group 'clock', ignoring: Unknown group[0m
+[INF] process: Started systemd-pcrnvdone.service (PID 395)
+[INF] executor: Starting service: systemd-pcrlock-make-policy.service (/usr/lib/systemd/systemd-pcrlock)
+[INF] process: Started systemd-pcrlock-make-policy.service (PID 398)
+[INF] executor: Starting service: systemd-pcrlock-firmware-config.service (/usr/lib/systemd/systemd-pcrlock)
+[INF] process: Started systemd-pcrlock-firmware-config.service (PID 399)
+[INF] executor: Starting service: systemd-growfs@.service (/usr/lib/systemd/systemd-growfs)
+[INF] process: Started systemd-growfs@.service (PID 403)
+[INF] executor: Starting service: systemd-growfs-root.service (/usr/lib/systemd/systemd-growfs)
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:12: Failed to resolve user 'systemd-network': Unknown user[0m
+Creating group 'floppy' with GID 94.
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:24: Failed to resolve group 'systemd-journal': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:43 Failed to resolve group 'tty', ignoring: Unknown group[0m
+[INF] process: Started systemd-growfs-root.service (PID 404)
+[INF] executor: Starting service: systemd-volatile-root.service (/usr/lib/systemd/systemd-volatile-root)
+[INF] process: Started systemd-volatile-root.service (PID 405)
+[INF] executor: Starting service: user@.service (/usr/lib/systemd/systemd)
+[INF] process: Started user@.service (PID 406)
+[INF] executor: Starting service: capsule@.service (/usr/lib/systemd/systemd)
+[INF] process: Started capsule@.service (PID 408)
+[INF] executor: Starting service: audit-rules.service (/usr/bin/augenrules)
+[INF] process: Started audit-rules.service (PID 409)
+[0;1;31m/usr/lib/tmpfiles.d/systemd-network.conf:13: Failed to resolve user 'systemd-network': Unknown user[0m
+[0;1;31mFailed to open TPM2 event log '/sys/kernel/security/tpm0/binary_bios_measurements': No such file or directory[0m
+[0;1;31mFailed to check if "%f" is a mount point: No such file or directory[0m
+[0;1;31mFailed to read EFI variable 'SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c': No such file or directory[0m
+[0;1;39mNo complete TPM2 support detected, exiting gracefully.[0m
+[0;1;31mCouldn't determine whether /sysroot is a mount point: No such file or directory[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:44 Failed to resolve group 'tty', ignoring: Unknown group[0m
+[0;1;31mFailed to open TPM2 event log '/sys/kernel/security/tpm0/binary_bios_measurements': No such file or directory[0m
+Trying to run as user instance, but the system has not been booted with systemd.
+Successfully resized "/" to 3.9G bytes.
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group::r-x,d:group:adm:r-x,d:group:wheel:r-x,group::r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+Creating group 'scanner' with GID 96.
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:11: Failed to resolve group 'utmp': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:45 Failed to resolve group 'tty', ignoring: Unknown group[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group:adm:r-x,d:group:wheel:r-x,group:adm:r-X,group:wheel:r-X", ignoring: Invalid argument[0m
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:23: Failed to resolve group 'systemd-journal': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:46 Failed to resolve group 'tty', ignoring: Unknown group[0m
+Creating group 'power' with GID 98.
+Creating group 'nobody' with GID 65534.
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:28: Failed to resolve group 'systemd-journal': Unknown group[0m
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:24: Failed to resolve group 'systemd-journal': Unknown group[0m
+[INF] executor: Starting service: ldconfig.service (ldconfig)
+[INF] process: Started ldconfig.service (PID 422)
+[INF] executor: Starting service: auditd.service (/usr/bin/auditd)
+[INF] process: Started auditd.service (PID 423)
+[INF] executor: Starting service: systemd-journal-catalog-update.service (journalctl)
+[INF] process: Started systemd-journal-catalog-update.service (PID 424)
+[INF] executor: Starting service: systemd-firstboot.service (systemd-firstboot)
+[?2004hsh-5.3# Trying to run as user instance, but the system has not been booted with systemd.
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:47 Failed to resolve group 'uucp', ignoring: Unknown group[0m
+[INF] process: Started systemd-firstboot.service (PID 425)
+[INF] executor: Starting service: initrd-udevadm-cleanup-db.service (udevadm)
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:29: Failed to resolve group 'systemd-journal': Unknown group[0m
+[INF] process: Started initrd-udevadm-cleanup-db.service (PID 429)
+Creating group 'adm' with GID 999.
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group::r-x,d:group:adm:r-x,d:group:wheel:r-x,group::r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:30: Failed to resolve group 'systemd-journal': Unknown group[0m
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 438)
+[INF] executor: Reached target: initrd.target
+[INF] executor: Reached target: multi-user.target
+[INF] executor: Starting service: system-update-cleanup.service (rm)
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:49 Failed to resolve group 'kmem', ignoring: Unknown group[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group:adm:r-x,d:group:wheel:r-x,group:adm:r-X,group:wheel:r-X", ignoring: Invalid argument[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group::r-x,d:group:adm:r-x,d:group:wheel:r-x,group::r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+[INF] process: Started system-update-cleanup.service (PID 440)
+[INF] executor: Starting service: systemd-update-utmp.service (/usr/lib/systemd/systemd-update-utmp)
+[INF] process: Started systemd-update-utmp.service (PID 441)
+[INF] executor: Starting service: systemd-networkd-persistent-storage.service (networkctl)
+[INF] process: Started systemd-networkd-persistent-storage.service (PID 442)
+[INF] executor: Starting service: systemd-networkd-wait-online@.service (/usr/lib/systemd/systemd-networkd-wait-online)
+[INF] process: Started systemd-networkd-wait-online@.service (PID 445)
+[INF] executor: Reached target: storage-target-mode.target
+[0;1;31mFailed to connect to network service /run/systemd/netif/io.systemd.Network: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Creating group 'wheel' with GID 998.
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:28: Failed to resolve group 'systemd-journal': Unknown group[0m
+[0;1;33m[0;1;38:5:185mFailed to get D-Bus connection, ignoring: No such file or directory[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:51 Failed to resolve group 'input', ignoring: Unknown group[0m
+[0;1;31mInvalid interface name: %i[0m
+[INF] executor: Starting service: systemd-networkd-wait-online.service (/usr/lib/systemd/systemd-networkd-wait-online)
+[INF] process: Started systemd-networkd-wait-online.service (PID 455)
+[INF] executor: Starting service: breakpoint-pre-switch-root.service (/bin/sh)
+[INF] process: Started breakpoint-pre-switch-root.service (PID 456)
+[INF] executor: Starting service: initrd-cleanup.service (systemctl)
+Skipping key 9EF7224F791981413C3F87A07CBECE7D12131619 with UID pacman@localhost...
+Skipping key 02FD1C7A934E614545849F19A6234074498E9CEE with UID eworm@archlinux.org...
+Skipping key 034D823DA2055BEE6A6BF0BB25EA6900D9EA5EBC with UID george@rawlinson.net.nz...
+sh: cannot set terminal process group (-1): Inappropriate ioctl for device
+sh: no job control in this shell
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:29: Failed to resolve group 'systemd-journal': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:54 Failed to resolve group 'video', ignoring: Unknown group[0m
+Creating group 'empower' with GID 997.
+[INF] process: Started initrd-cleanup.service (PID 459)
+[INF] executor: Reached target: graphical.target
+[INF] executor: Reached target: default.target
+[INF] executor: Reached target: initrd-switch-root.target
+[INF] executor: Starting service: systemd-boot-check-no-failures.service (/usr/lib/systemd/systemd-boot-check-no-failures)
+Skipping key 034D823DA2055BEE6A6BF0BB25EA6900D9EA5EBC with UID grawlinson@archlinux.org...
+Skipping key 04CF0CD6F6EE93AE1896F58407D06351CA5B31BE with UID tpkessler@archlinux.org...
+Skipping key 04DC3FB1445FECA813C27EFAEA4F7B321A906AD9 with UID polyzen@archlinux.org...
+Skipping key 04F7A0E31E08D3E08D39AFEBD147F94364295E8C with UID raster@archlinux.org...
+[0;1;31mSystem has not been booted with systemd as init system (PID 1). Can't operate.[0m
+[0;1;31mFailed to connect to system scope bus via local transport: Host is down[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group:adm:r-x,d:group:wheel:r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+[INF] process: Started systemd-boot-check-no-failures.service (PID 463)
+[INF] init: Entering main loop
+Skipping key 04F7A0E31E08D3E08D39AFEBD147F94364295E8C with UID raster@rasterman.com...
+Skipping key 051EAD6A6155389D69DA02E5EB763B4E9DB887A6 with UID foxxx0@archlinux.org...
+Skipping key 05C7775A9E8B977407FE08E69D4C5AA15426DA0A with UID frederik@tty42.de...
+Skipping key 05C7775A9E8B977407FE08E69D4C5AA15426DA0A with UID frederik.schwan@linux.com...
+Skipping key 05C7775A9E8B977407FE08E69D4C5AA15426DA0A with UID frederik.schwan@mailbox.org...
+Skipping key 05C7775A9E8B977407FE08E69D4C5AA15426DA0A with UID frederik@schw4n.de...
+[INF] process: systemd-udev-load-credentials.service (PID 169) exited with 0
+[INF] process: systemd-journald@.service (PID 170) exited with 1
+[INF] process: rfkill-unblock@.service (PID 171) exited with 1
+[INF] process: systemd-coredump@.service (PID 172) exited with 1
+[?2004hsh-5.3# Creating group 'utmp' with GID 996.
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "group:adm:r--,group:wheel:r--", ignoring: Invalid argument[0m
+[INF] process: systemd-portabled.service (PID 175) exited with 1
+[0;1;31m/usr/lib/tmpfiles.d/systemd.conf:30: Failed to resolve group 'systemd-journal': Unknown group[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[INF] process: e2scrub_reap.service (PID 176) exited with 1
+Skipping key 05C7775A9E8B977407FE08E69D4C5AA15426DA0A with UID frederik@schwan.it...
+Skipping key 05C7775A9E8B977407FE08E69D4C5AA15426DA0A with UID freswa@archlinux.org...
+Skipping key 07DFD3A0BC213FA12EDC217559B3122E2FA915EC with UID alexfilgueira@cinnarch.com...
+Skipping key 09AC932ED7B1EC1E2DA7C6797A08E72CD906F59E with UID anonfunc@archlinux.org...
+Creating group 'audio' with GID 995.
+[0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:2: Failed to resolve user 'tss': Unknown user[0m
+Skipping key 0A9DDABB64B993D82AD45E4F32EAB0A976938292 with UID kgizdov@archlinux.org...
+Skipping key 0A9DDABB64B993D82AD45E4F32EAB0A976938292 with UID arch@kge.pw...
+Skipping key 0A9DDABB64B993D82AD45E4F32EAB0A976938292 with UID kgizdov@gmail.com...
+Skipping key 0A9DDABB64B993D82AD45E4F32EAB0A976938292 with UID kgizdov@keybase.io...
+Skipping key 0B20CA1931F5DA3A70D0F8D2EA6836E1AB441196 with UID stephane@archlinux.org...
+Skipping key 0CADAACF70F64C654E131B3111675C743429DDEF with UID mtorromeo@archlinux.org...
+[INF] process: systemd-battery-check.service (PID 180) exited with 0
+[INF] process: kmod-static-nodes.service (PID 181) exited with 0
+[INF] process: systemd-validatefs@.service (PID 184) exited with 1
+[INF] process: systemd-hibernate-resume.service (PID 185) exited with 1
+[INF] process: uuidd.service (PID 187) exited with 1
+[INF] process: nftables.service (PID 188) exited with 0
+[INF] process: dbus-org.freedesktop.timedate1.service (PID 189) exited with 1
+[INF] process: dbus-org.freedesktop.machine1.service (PID 190) exited with 1
+[INF] process: dbus-org.freedesktop.locale1.service (PID 191) exited with 1
+[INF] process: systemd-machined.service (PID 192) exited with 1
+[INF] process: dbus-broker.service (PID 193) exited with 1
+[INF] process: systemd-journal-gatewayd.service (PID 195) exited with 127
+[INF] process: systemd-network-generator.service (PID 196) exited with 0
+[INF] process: systemd-modules-load.service (PID 197) exited with 0
+Skipping key 0CADAACF70F64C654E131B3111675C743429DDEF with UID massimiliano.torromeo@gmail.com...
+Skipping key 0E87D6C3F9AF7FDED0C8588D22E3B67B4A86FDE7 with UID me@vild.io...
+Skipping key 0E87D6C3F9AF7[!p]104\[0m[?7h[1G[0J[H[2J[1;1H[0;44;1;37m[K
+[0;44;1;37m     Initial Setup[K
+[0;44;1;37m[K
+[0m[K[21;1H[0m[K
+[0;44;1;37m[K
+[0;44;1;37m    [0;38;2;23;147;209m Arch Linux [0;44;1;37m - See ]8;;https://wiki.archlinux.org/\documentation]8;;\ for more information.[K
+[0;44;1;37m[K[0m[5;20r[5;1H[0;1;33m[0;1;38:5:185mFailed to parse ACL "default:group:tss:rwx", ignoring: Invalid argument[0m
+Creating group 'clock' with GID 994.
+[INF] process: rfkill-block@.service (PID 198) exited with 1
+Skipping key 0E8B644079F599DFC1DDC3973348882F6AC6A4C2 with UID pierre@master-key.archlinux.org...
+Skipping key 0F334D8698881578F65D2AE55ED514A45BD5C938 with UID vmlinuz386@gmail.com...
+Skipping key 0F334D8698881578F65D2AE55ED514A45BD5C938 with UID djgera@archlinux.org...
+Skipping key 109415E692007609CA7EBFE4001CF4810BE8D911 with UID lahwaacz@archlinux.org...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:55 Failed to resolve group 'video', ignoring: Unknown group[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "d:group:adm:r-x,d:group:wheel:r-x,group:adm:r-x,group:wheel:r-x", ignoring: Invalid argument[0m
+[0;1;39mWelcome to [0m[38;2;23;147;209mArch Linux[0;1;39m![0m
+
+Please configure the system!
+
+[0;1;39m‣ Please enter the new timezone name or number ("list" to list options, empty to skip): [INF] process: systemd-hostnamed.service (PID 199) exited with 1
+[INF] process: systemd-creds@.service (PID 200) exited with 1
+[INF] process: initrd-switch-root.service (PID 201) exited with 1
+[INF] process: keyboxd@.service (PID 202) exited with 1
+Skipping key 14E46FE5FD69F2E287E244DB632C3CC0D1C9CAF6 with UID bgyorgy@archlinux.org...
+Skipping key 159F3A43AEB246C5746C033814BC4F30B3B92EBA with UID grazzolini@master-key.archlinux.org...
+Skipping key 165E0FF7C48C226E1EC363A7F83424824B3E4B90 with UID orhun@archlinux.org...
+Skipping key 165E0FF7C48C226E1EC363A7F83424824B3E4B90 with UID orhunparmaksiz@gmail.com...
+[0m[0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:4: Failed to resolve user 'tss': Unknown user[0m
+[INF] process: systemd-timedated.service (PID 205) exited with 1
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "group:adm:r--,group:wheel:r--", ignoring: Invalid argument[0m
+[INF] process: systemd-loop@.service (PID 206) exited with 1
+[INF] process: dbus-org.freedesktop.sysupdate1.service (PID 207) exited with 1
+[INF] process: systemd-rfkill.service (PID 208) exited with 0
+[INF] process: systemd-sysext-initrd.service (PID 209) exited with 0
+[INF] process: dbus-org.freedesktop.portable1.service (PID 210) exited with 1
+[INF] process: gpg-agent@.service (PID 211) exited with 2
+[INF] process: systemd-confext-initrd.service (PID 216) exited with 0
+[INF] process: e2scrub_fail@.service (PID 217) exited with 1
+[INF] process: krb5-kpropd@.service (PID 222) exited with 0
+[INF] process: mkinitcpio-generate-shutdown-ramfs.service (PID 223) exited with 1
+Skipping key 169704C6FB490C6892C7F23C37E0AF1FDA48F373 with UID jerome@leclan.ch...
+Skipping key 169704C6FB490C6892C7F23C37E0AF1FDA48F373 with UID jleclanche@archlinux.org...
+Skipping key 1A60DC44245D06FEF90623D6EEEEE2EEEE2EEEEE with UID gaetan@fenua.org...
+Skipping key 1A60DC44245D06FEF90623D6EEEEE2EEEE2EEEEE with UID bisson@gaati.org...
+[INF] process: systemd-sysupdated.service (PID 225) exited with 1
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "default:group:tss:rwx", ignoring: Invalid argument[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:56 Failed to resolve group 'video', ignoring: Unknown group[0m
+[INF] process: systemd-sysupdate-reboot.service (PID 226) exited with 1
+[INF] process: systemd-localed.service (PID 230) exited with 1
+[INF] process: systemd-tmpfiles-setup-dev-early.service (PID 231) exited with 0
+[INF] process: systemd-quotacheck@.service (PID 232) exited with 0
+[0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:2: Failed to resolve user 'tss': Unknown user[0m
+[INF] process: dbus.service (PID 233) exited with 1
+[INF] process: systemd-boot-clear-sysfail.service (PID 234) exited with 1
+[INF] process: systemd-hibernate-clear.service (PID 235) exited with 0
+[INF] process: dbus-org.freedesktop.hostname1.service (PID 236) exited with 1
+Skipping key 1F7156C2AD7D3B15873C5E2940825C6BDD1A4146 with UID rgacogne@archlinux.org...
+Skipping key 209A36D43CE2E87DA861FC58539DFD48135182EF with UID juergen@archlinux.org...
+Skipping key 2191B89431BAC0A8B96DE93D244740D17C7FD0EC with UID artafinde@gmail.com...
+[INF] process: systemd-journalctl@.service (PID 241) exited with 0
+[INF] process: e2scrub@.service (PID 242) exited with 1
+[INF] process: systemd-backlight@.service (PID 244) exited with 1
+[INF] process: systemd-journal-remote.service (PID 245) exited with 127
+[INF] process: krb5-kdc.service (PID 246) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: quotaon@.service (PID 247) exited with 127
+[INF] process: e2scrub_all.service (PID 248) exited with 1
+[INF] process: fstrim.service (PID 253) exited with 0
+[INF] process: ebtables.service (PID 254) exited with 2
+[INF] process: krb5-kpropd.service (PID 255) exited with 0
+[INF] process: modprobe@.service (PID 256) exited with 1
+[INF] process: systemd-factory-reset@.service (PID 257) exited with 0
+[INF] process: dirmngr@.service (PID 258) exited with 1
+[INF] process: iptables.service (PID 259) exited with 0
+[INF] process: systemd-vconsole-setup.service (PID 260) exited with 0
+[INF] process: systemd-pstore.service (PID 262) exited with 0
+[INF] process: systemd-udev-trigger.service (PID 264) exited with 0
+[INF] process: systemd-fsck-root.service (PID 266) exited with 0
+[INF] process: krb5-kadmind.service (PID 267) exited with 1
+[INF] process: arptables.service (PID 277) exited with 2
+[INF] process: systemd-logind.service (PID 278) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: dbus-org.freedesktop.login1.service (PID 279) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: systemd-sysctl.service (PID 281) exited with 0
+[INF] process: initrd-parse-etc.service (PID 282) exited with 1
+[INF] process: systemd-tmpfiles-setup-dev.service (PID 283) exited with 65
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "default:group:tss:rwx", ignoring: Invalid argument[0m
+[0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:6: Failed to resolve group 'tss': Unknown group[0m
+Creating group 'disk' with GID 993.
+Skipping key 2191B89431BAC0A8B96DE93D244740D17C7FD0EC with UID artafinde@archlinux.org...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:57 Failed to resolve group 'video', ignoring: Unknown group[0m
+
+Skipping key 25ACE777F62C5E5ACBF2C0474E532176DBAD6F47 with UID cbehan@archlinux.org...
+Skipping key 2612B04099DBD9B9A3DD92A0456C7A9B91B842AE with UID jakob.gruber@gmail.com...
+Skipping key 262A58EC6C51F7EA395B2E2DFDC3040B92ACA748 with UID antiz@archlinux.org...
+
+Arch Linux 6.19.11-arch1-1 (-)
+
+archlinux login: 
+Arch Linux 6.19.11-arch1-1 (-)
+
+archlinux login: [INF] process: systemd-homed.service (PID 285) exited with 1
+[INF] process: systemd-suspend.service (PID 287) exited with 1
+[INF] process: systemd-hybrid-sleep.service (PID 288) exited with 1
+Arch Linux 6.19.11-arch1-1 (-)
+
+archlinux login: [0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:4: Failed to resolve user 'tss': Unknown user[0m
+Skipping key 27FFC4769E19F096D41D9265A04F9397CDFD6BB0 with UID dan@master-key.archlinux.org...
+Refreshing key 2AC0A42EFB0B5CBC7A0402ED4DC95B6D7BE9892E with UID dvzrv@master-key.archlinux.org...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:58 Failed to resolve group 'video', ignoring: Unknown group[0m
+
+Arch Linux 6.19.11-arch1-1 (-)
+
+archlinux [INF] process: systemd-suspend-then-hibernate.service (PID 289) exited with 1
+[INF] process: systemd-hibernate.service (PID 290) exited with 1
+[INF] process: ip6tables.service (PID 291) exited with 0
+[INF] process: systemd-pcrphase-initrd.service (PID 292) exited with 0
+[INF] process: systemd-pcrphase-factory-reset.service (PID 293) exited with 0
+
+Creating group 'input' with GID 992.
+Arch Linux 6.19.11-arch1-1 (-)
+
+login: [0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:7: Failed to resolve group 'tss': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:59 Failed to resolve group 'video', ignoring: Unknown group[0m
+[0;1;33m[0;1;38:5:185mFailed to parse ACL "default:group:tss:rwx", ignoring: Invalid argument[0m
+[INF] process: systemd-pcrphase-storage-target-mode.service (PID 294) exited with 0
+[INF] process: systemd-pcrextend@.service (PID 295) exited with 1
+[INF] process: systemd-pcrmachine.service (PID 296) exited with 0
+[INF] process: systemd-pcrproduct.service (PID 297) exited with 0
+[INF] process: systemd-factory-reset-complete.service (PID 298) exited with 0
+archlinux login: [INF] process: systemd-udev-settle.service (PID 302) exited with 0
+[INF] process: systemd-fsck@.service (PID 303) exited with 1
+[INF] process: systemd-remount-fs.service (PID 304) exited with 0
+[INF] process: user-runtime-dir@.service (PID 305) exited with 1
+[INF] process: systemd-update-done.service (PID 308) exited with 0
+[INF] process: systemd-userdb-load-credentials.service (PID 309) exited with 0
+[INF] process: systemd-machine-id-commit.service (PID 311) exited with 0
+[INF] process: systemd-sysext.service (PID 312) exited with 0
+[INF] process: systemd-bootctl@.service (PID 314) exited with 0
+[INF] process: lastlog2-import.service (PID 316) exited with 1
+[INF] process: systemd-confext.service (PID 317) exited with 0
+[INF] process: systemd-binfmt.service (PID 318) exited with 0
+[INF] process: systemd-boot-update.service (PID 319) exited with 0
+[INF] process: systemd-sysext@.service (PID 320) exited with 0
+[INF] process: pam_namespace.service (PID 321) exited with 0
+[INF] process: systemd-vmspawn@.service (PID 322) exited with 1
+[INF] process: systemd-nspawn@.service (PID 323) exited with 1
+[INF] process: systemd-pcrphase.service (PID 324) exited with 0
+[INF] process: systemd-user-sessions.service (PID 325) exited with 0
+[INF] process: systemd-tpm2-setup-early.service (PID 326) exited with 0
+[0;1;31m/usr/lib/tmpfiles.d/uuidd.conf:5: Failed to resolve user 'uuidd': Unknown user[0m
+[INF] process: systemd-factory-reset-request.service (PID 327) exited with 1
+[INF] process: systemd-tpm2-clear.service (PID 328) exited with 0
+[INF] process: systemd-storagetm.service (PID 329) exited with 1
+[INF] process: systemd-pcrfs-root.service (PID 330) exited with 0
+[0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:6: Failed to resolve group 'tss': Unknown group[0m
+[0;1;31m/usr/lib/tmpfiles.d/uuidd.conf:6: Failed to resolve user 'uuidd': Unknown user[0m
+[INF] process: systemd-pcrlock-file-system.service (PID 334) exited with 0
+[INF] process: systemd-quotacheck-root.service (PID 335) exited with 0
+[INF] process: systemd-pcrlock-machine-id.service (PID 341) exited with 0
+[INF] process: systemd-pcrphase-sysinit.service (PID 346) exited with 0
+[INF] process: systemd-journal-upload.service (PID 347) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[INF] process: systemd-sysupdate.service (PID 348) exited with 1
+[INF] process: systemd-repart@.service (PID 368) exited with 0
+[INF] process: systemd-tpm2-setup.service (PID 371) exited with 0
+[INF] process: systemd-repart.service (PID 373) exited with 0
+[INF] process: systemd-pcrfs@.service (PID 374) exited with 1
+Creating group 'kmem' with GID 991.
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:61 Failed to resolve group 'render', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/tmpfiles.d/tpm2-tss-fapi.conf:7: Failed to resolve group 'tss': Unknown group[0m
+[INF] process: systemd-resolved.service (PID 375) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: shadow.service (PID 376) exited with 2
+[INF] process: systemd-oomd.service (PID 377) exited with 1
+[NTC] process: Restarting systemd-oomd.service
+[INF] process: systemd-timesyncd.service (PID 378) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[0;1;31m/usr/lib/tmpfiles.d/uuidd.conf:5: Failed to resolve user 'uuidd': Unknown user[0m
+[0;1;31m/usr/lib/tmpfiles.d/var.conf:15: Failed to resolve group 'utmp': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:62 Failed to resolve group 'render', ignoring: Unknown group[0m
+[INF] process: quotaon-root.service (PID 381) exited with 127
+[INF] process: systemd-journal-flush.service (PID 384) exited with 0
+[INF] process: systemd-boot-random-seed.service (PID 385) exited with 0
+[INF] process: systemd-bless-boot.service (PID 389) exited with 1
+[INF] process: systemd-pcrlock-firmware-code.service (PID 391) exited with 1
+[INF] process: systemd-pcrlock-secureboot-authority.service (PID 392) exited with 0
+[INF] process: systemd-pcrlock@.service (PID 393) exited with 1
+[INF] process: systemd-pcrlock-secureboot-policy.service (PID 394) exited with 1
+[INF] process: systemd-pcrnvdone.service (PID 395) exited with 0
+Creating group 'kvm' with GID 990.
+[0;1;31m/usr/lib/tmpfiles.d/uuidd.conf:6: Failed to resolve user 'uuidd': Unknown user[0m
+[INF] process: systemd-pcrlock-make-policy.service (PID 398) exited with 1
+[INF] process: systemd-pcrlock-firmware-config.service (PID 399) exited with 1
+[INF] process: systemd-growfs@.service (PID 403) exited with 1
+[INF] process: systemd-growfs-root.service (PID 404) exited with 0
+[INF] process: systemd-volatile-root.service (PID 405) exited with 1
+[INF] process: user@.service (PID 406) exited with 1
+[INF] process: capsule@.service (PID 408) exited with 1
+[INF] process: audit-rules.service (PID 409) exited with 0
+[INF] process: ldconfig.service (PID 422) exited with 0
+[INF] process: auditd.service (PID 423) exited with 0
+[INF] process: systemd-journal-catalog-update.service (PID 424) exited with 0
+[0;1;31m/usr/lib/tmpfiles.d/var.conf:16: Failed to resolve group 'utmp': Unknown group[0m
+[0;1;31m/usr/lib/tmpfiles.d/var.conf:15: Failed to resolve group 'utmp': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:63 Failed to resolve group 'render', ignoring: Unknown group[0m
+Creating group 'lp' with GID 989.
+[INF] process: initrd-udevadm-cleanup-db.service (PID 429) exited with 0
+[INF] process: systemd-networkd.service (PID 438) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: system-update-cleanup.service (PID 440) exited with 0
+[INF] process: systemd-update-utmp.service (PID 441) exited with 0
+[INF] process: systemd-networkd-persistent-storage.service (PID 442) exited with 1
+[INF] process: systemd-networkd-wait-online@.service (PID 445) exited with 1
+[INF] process: initrd-cleanup.service (PID 459) exited with 1
+[0;1;31m/usr/lib/tmpfiles.d/var.conf:17: Failed to resolve group 'utmp': Unknown group[0m
+[0;1;31m/usr/lib/tmpfiles.d/var.conf:16: Failed to resolve group 'utmp': Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:65 Failed to resolve group 'sgx', ignoring: Unknown group[0m
+[INF] process: systemd-boot-check-no-failures.service (PID 463) exited with 1
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+Creating group 'optical' with GID 988.
+[0;1;31m/usr/lib/tmpfiles.d/var.conf:17: Failed to resolve group 'utmp': Unknown group[0m
+Creating group 'render' with GID 987.
+Creating group 'sgx' with GID 986.
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:66 Failed to resolve group 'sgx', ignoring: Unknown group[0m
+[INF] process: Started krb5-kdc.service (PID 493)
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+Creating group 'storage' with GID 985.
+[INF] process: Started systemd-logind.service (PID 494)
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 495)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 496)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 497)
+[NTC] executor: Restarting systemd-oomd.service
+[INF] executor: Starting service: systemd-oomd.service (/usr/lib/systemd/systemd-oomd)
+[INF] process: Started systemd-oomd.service (PID 498)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 499)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 500)
+[INF] process: krb5-kdc.service (PID 493) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-random-seed.service (PID 342) exited with 0
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] process: Started krb5-kdc.service (PID 502)
+[INF] process: systemd-journal-upload.service (PID 496) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 503)
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[INF] process: krb5-kdc.service (PID 502) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 504)
+[INF] process: systemd-resolved.service (PID 497) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: Started systemd-resolved.service (PID 505)
+[INF] process: krb5-kdc.service (PID 504) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 506)
+[0;1;31mRequired --url=/-u option missing.[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: systemd-journal-upload.service (PID 503) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 508)
+[INF] process: krb5-kdc.service (PID 506) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 509)
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[INF] process: systemd-timesyncd.service (PID 499) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-resolved.service (PID 505) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: krb5-kdc.service (PID 509) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] process: Started systemd-timesyncd.service (PID 512)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 513)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 514)
+[INF] process: systemd-networkd.service (PID 500) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-journal-upload.service (PID 508) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 515)
+[NTC] executor: Restarting systemd-journal-upload.service
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 516)
+[INF] process: krb5-kdc.service (PID 514) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: Started krb5-kdc.service (PID 517)
+[INF] process: systemd-timesyncd.service (PID 512) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] process: krb5-kdc.service (PID 517) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-resolved.service (PID 513) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: systemd-networkd.service (PID 515) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 519)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 520)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 521)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+Creating group 'tty' with GID 5.
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 522)
+[INF] process: systemd-journal-upload.service (PID 516) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 524)
+[INF] process: krb5-kdc.service (PID 520) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: Started krb5-kdc.service (PID 525)
+[INF] process: krb5-kdc.service (PID 525) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] process: Started krb5-kdc.service (PID 526)
+[INF] process: systemd-journal-upload.service (PID 524) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[INF] process: krb5-kdc.service (PID 526) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[INF] process: Started systemd-journal-upload.service (PID 530)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 531)
+[INF] process: systemd-timesyncd.service (PID 519) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-networkd.service (PID 522) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: Started systemd-timesyncd.service (PID 532)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 533)
+[INF] process: systemd-resolved.service (PID 521) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 534)
+[INF] process: krb5-kdc.service (PID 531) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 535)
+[0;1;31mRequired --url=/-u option missing.[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:71 Failed to resolve group 'audio', ignoring: Unknown group[0m
+[INF] process: systemd-tmpfiles-clean.service (PID 313) exited with 65
+[INF] process: systemd-journal-upload.service (PID 530) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Creating group 'uucp' with GID 984.
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[INF] process: Started systemd-journal-upload.service (PID 537)
+[INF] process: systemd-timesyncd.service (PID 532) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-networkd.service (PID 533) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-resolved.service (PID 534) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+gpg: error retrieving 'dvzrv@master-key.archlinux.org' via WKD: Network is unreachable
+gpg: error reading key: Network is unreachable
+Skipping key 2C118C620F02DB9AC1D0F9FA94DD2393DA2EE423 with UID massimiliano.torromeo@gmail.com...
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] process: Started systemd-timesyncd.service (PID 541)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 542)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 543)
+[INF] process: systemd-journal-upload.service (PID 537) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 544)
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+Skipping key 2E36D8620221482FC45CB7F2A91764759326B440 with UID lfleischer@lfos.de...
+Skipping key 2E36D8620221482FC45CB7F2A91764759326B440 with UID lfleischer@archlinux.org...
+Skipping key 2E36D8620221482FC45CB7F2A91764759326B440 with UID lfleischer@calcurse.org...
+Skipping key 335A1BAD44C6A737C6ACB3D4B817191D947490D3 with UID martin@archlinux.org...
+Skipping key 34C5D94FE7E7913E86DC427E7FB1A3800C84C0A5 with UID gostrc@gmail.com...
+Skipping key 355BDB97ED4724E6B3A450E7A3D9562A589874AB with UID juergen@archlinux.org...
+Skipping key 355BDB97ED4724E6B3A450E7A3D9562A589874AB with UID juergen@hoetzel.info...
+Refreshing key 3572FA2A1B067F22C58AF155F8B821B42A6FDCD7 with UID artafinde@master-key.archlinux.org...
+[0;1;33m[0;1;38:5:185mNo swap; memory pressure usage will be degraded[0m
+[0;1;31mFailed to connect to /run/systemd/io.systemd.ManagedOOM: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:82 Failed to resolve group 'audio', ignoring: Unknown group[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: systemd-logind.service (PID 494) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started systemd-logind.service (PID 548)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+gpg: error retrieving 'artafinde@master-key.archlinux.org' via WKD: Network is unreachable
+gpg: error reading key: Network is unreachable
+[INF] process: krb5-kdc.service (PID 535) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 549)
+[0;1;31mRequired --url=/-u option missing.[0m
+Skipping key 38100C24376CD5F6ED4FF4B46918400C2703040C with UID bertptrs@archlinux.org...
+Skipping key 38EDD1886756924E1224E49524E4CDB0013C2580 with UID svetlemodry@archlinux.org...
+Skipping key 38EDD1886756924E1224E49524E4CDB0013C2580 with UID dragonlord@aur.archlinux.org...
+Skipping key 38EDD1886756924E1224E49524E4CDB0013C2580 with UID dragonlord@aur.archlinux.org...
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+Skipping key 39F880E50E49A4D11341E8F939E4F17F295AFBF4 with UID atsutane@freethoughts.de...
+Skipping key 39F880E50E49A4D11341E8F939E4F17F295AFBF4 with UID atsutane@freethoughts.de...
+Skipping key 39F880E50E49A4D11341E8F939E4F17F295AFBF4 with UID t.toepper@gmx.de...
+Skipping key 3DCE51D60930EBA47858BA4146F633CBB0EB4BF2 with UID lains@archlinux.org...
+Skipping key 3DCE51D60930EBA47858BA4146F633CBB0EB4BF2 with UID filipe.lains@gmail.com...
+Skipping key 3DCE51D60930EBA47858BA4146F633CBB0EB4BF2 with UID lains@riseup.net...
+Skipping key 3DCE51D60930EBA47858BA4146F633CBB0EB4BF2 with UID lains@python.org...
+Skipping key 3E518BF2526FD1979E8AAE4965C110C1EA433FC7 with UID sergej@p5n.pp.ru...
+Skipping key 3E518BF2526FD1979E8AAE4965C110C1EA433FC7 with UID arch@sergej.pp.ru...
+Skipping key 3E518BF2526FD1979E8AAE4965C110C1EA433FC7 with UID ml@sergej.pp.ru...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:83 Failed to resolve group 'audio', ignoring: Unknown group[0m
+Creating group 'video' with GID 983.
+[INF] process: systemd-logind.service (PID 548) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: systemd-timesyncd.service (PID 541) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-journal-upload.service (PID 544) exited with 1
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+Skipping key 3E518BF2526FD1979E8AAE4965C110C1EA433FC7 with UID pupykin.s@gmail.com...
+Skipping key 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C with UID pierre@archlinux.org...
+Skipping key 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C with UID pierre@archlinux.de...
+Skipping key 3FFA6AB7B69AAE6CCA263DDE019A7474297D8577 with UID danielbermond@gmail.com...
+Skipping key 3FFA6AB7B69AAE6CCA263DDE019A7474297D8577 with UID dbermond@archlinux.org...
+[NTC] process: Restarting systemd-journal-upload.service
+[INF] process: systemd-oomd.service (PID 498) exited with 1
+[NTC] process: Restarting systemd-oomd.service
+[INF] process: systemd-resolved.service (PID 543) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[NTC] executor: Restarting systemd-logind.service
+Skipping key 40440DC037C05620984379A6761FAD69BA06C6A9 with UID public@dicebot.lv...
+Skipping key 40776A5221EF5AD468A4906D42A1DB15EC133BAD with UID angvp@archlinux.org...
+Skipping key 42DFAFB7C03B2E4E7BBDBA69930B82BFC2BDA011 with UID muflone@archlinux.org...
+Skipping key 42DFAFB7C03B2E4E7BBDBA69930B82BFC2BDA011 with UID muflone@muflone.com...
+Skipping key 42DFAFB7C03B2E4E7BBDBA69930B82BFC2BDA011 with UID muflone@vbsimple.net...
+Skipping key 44A62127789A949F2F082ED429C71CE612B57264 with UID polyzen@archlinux.org...
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started systemd-logind.service (PID 553)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 554)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 555)
+Skipping key 44D4A033AC140143927397D47EFD567D4C7EA887 with UID ionut@master-key.archlinux.org...
+Skipping key 44EA62ACDBC81B6A0D1FD267206CBC892D1493D2 with UID oudomphe@phare.normalesup.org...
+Skipping key 44EA62ACDBC81B6A0D1FD267206CBC892D1493D2 with UID remy@archlinux.org...
+Skipping key 481C4474AF1572165AE4C6AF3FDDD575826C5C30 with UID yan12125@archlinux.org...
+Skipping key 481C4474AF1572165AE4C6AF3FDDD575826C5C30 with UID d06922023@ntu.edu.tw...
+Skipping key 481C4474AF1572165AE4C6AF3FDDD575826C5C30 with UID yan12125@gmail.com...
+[NTC] executor: Restarting systemd-oomd.service
+[INF] executor: Starting service: systemd-oomd.service (/usr/lib/systemd/systemd-oomd)
+[INF] process: Started systemd-oomd.service (PID 556)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 557)
+[INF] process: systemd-networkd.service (PID 542) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: krb5-kdc.service (PID 549) exited with 1
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:84 Failed to resolve group 'video', ignoring: Unknown group[0m
+Skipping key 481C4474AF1572165AE4C6AF3FDDD575826C5C30 with UID yan12125@macports.org...
+Skipping key 481C4474AF1572165AE4C6AF3FDDD575826C5C30 with UID yan16037741@hotmail.com.tw...
+Skipping key 481C4474AF1572165AE4C6AF3FDDD575826C5C30 with UID yan12125@gmail.com...
+Skipping key 487EACC08557AD082088DABA1EB2638FF56C0C53 with UID d@falconindy.com...
+Skipping key 487EACC08557AD082088DABA1EB2638FF56C0C53 with UID dreisner@archlinux.org...
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-tmpfiles-setup.service (PID 379) exited with 65
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 558)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:86 Failed to resolve group 'lp', ignoring: Unknown group[0m
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mRequired --url=/-u option missing.[0m
+Skipping key 48C3B1F30DDD0FE67E516D16396E3E25BAB142C1 with UID keenerd@archlinux.org...
+Skipping key 48C3B1F30DDD0FE67E516D16396E3E25BAB142C1 with UID keenerd@gmail.com...
+Skipping key 4A8B17E20B88ACA61860009B5CED81B7C2E5C0D2 with UID xyne@archlinux.ca...
+Skipping key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC with UID pierre@archlinux.de...
+Skipping key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC with UID pierre@archlinux.org...
+[INF] process: Started krb5-kdc.service (PID 559)
+[INF] process: systemd-logind.service (PID 553) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: systemd-timesyncd.service (PID 554) exited with 1
+[0;1;33m[0;1;38:5:185mNo swap; memory pressure usage will be degraded[0m
+[0;1;31mFailed to connect to /run/systemd/io.systemd.ManagedOOM: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:87 Failed to resolve group 'lp', ignoring: Unknown group[0m
+Skipping key 4B1DE545A801D4549BFD3FEF90CB3D62C13D4796 with UID farseerfc@archlinuxcn.org...
+Skipping key 4B1DE545A801D4549BFD3FEF90CB3D62C13D4796 with UID farseerfc@gmail.com...
+Skipping key 4BE61D684CB4E31741614E7089AA27231C530226 with UID arch@kge.pw...
+Skipping key 4BE61D684CB4E31741614E7089AA27231C530226 with UID kgizdov@gmail.com...
+Skipping key 4BE61D684CB4E31741614E7089AA27231C530226 with UID kgizdov@keybase.io...
+Skipping key 4D913AECD81726D9A6C74F0ADA6426DD215B37AD with UID guillaume@archlinux.org...
+Skipping key 4D913AECD81726D9A6C74F0ADA6426DD215B37AD with UID guillaume@alaux.net...
+Skipping key 4D913AECD81726D9A6C74F0ADA6426DD215B37AD with UID guillaume@linux.com...
+Skipping key 4FCF887689C41B09506BE8D5F3E1D5C5D30DB0AD with UID me@andreascarpino.it...
+Skipping key 4FCF887689C41B09506BE8D5F3E1D5C5D30DB0AD with UID andrea@archlinux.org...
+Skipping key 4FCF887689C41B09506BE8D5F3E1D5C5D30DB0AD with UID scarpino@kde.org...
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-journal-upload.service (PID 555) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+Skipping key 50F33E2E5B0C3D900424ABE89BDCF497A4BBCC7F with UID mail@ambrevar.xyz...
+Skipping key 50F33E2E5B0C3D900424ABE89BDCF497A4BBCC7F with UID ambrevar@gmail.com...
+Skipping key 50F33E2E5B0C3D900424ABE89BDCF497A4BBCC7F with UID pe.neidhardt@gmail.com...
+Skipping key 50F33E2E5B0C3D900424ABE89BDCF497A4BBCC7F with UID pe.neidhardt@googlemail.com...
+Skipping key 50F33E2E5B0C3D900424ABE89BDCF497A4BBCC7F with UID pierre@atlas.engineer...
+Skipping key 5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5 with UID johannes@kyriasis.com...
+Skipping key 5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5 with UID demize@archlinux.org...
+[INF] process: Started systemd-logind.service (PID 560)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 561)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:88 Failed to resolve group 'lp', ignoring: Unknown group[0m
+Creating group 'users' with GID 982.
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:89 Failed to resolve group 'lp', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:90 Failed to resolve group 'lp', ignoring: Unknown group[0m
+Skipping key 531ECF3644A44FEA0B47DBCDE1E3CF0539448BFF with UID ike.devolder@archlinux.org...
+Skipping key 5357F3B111688D88C1D88119FCF2CB179205AC90 with UID eric@archlinux.org...
+Skipping key 535F8C0339450F054A4D282706096A6AD1CEDDAC with UID lordheavym@gmail.com...
+Skipping key 535F8C0339450F054A4D282706096A6AD1CEDDAC with UID lordheavym@archlinux.org...
+Skipping key 54C1FD273361EA514A237793F296BDE50368C6CE with UID blakkheim@archlinux.org...
+Skipping key 54C1FD273361EA514A237793F296BDE50368C6CE with UID tj@mrsk.me...
+Skipping key 54EB4D6DB209862C8945CACCED84945B35B2555C with UID robin@broda.me...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:91 Failed to resolve group 'lp', ignoring: Unknown group[0m
+[INF] process: Started systemd-journal-upload.service (PID 562)
+[INF] process: systemd-oomd.service (PID 556) exited with 1
+[NTC] process: Restarting systemd-oomd.service
+[INF] process: systemd-resolved.service (PID 557) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: krb5-kdc.service (PID 559) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[NTC] executor: Restarting systemd-oomd.service
+Creating group 'groups' with GID 981.
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+Creating group 'systemd-journal' with GID 980.
+Skipping key 54EB4D6DB209862C8945CACCED84945B35B2555C with UID coderobe@archlinux.org...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:93 Failed to resolve group 'disk', ignoring: Unknown group[0m
+Skipping key 54EB4D6DB209862C8945CACCED84945B35B2555C with UID coderobe@milliways.info...
+Skipping key 54EB4D6DB209862C8945CACCED84945B35B2555C with UID rob@coderobe.net...
+Skipping key 5559BC1A32B8F76B3FCCD9555FA5E5544F010D48 with UID daniel.wallace@autodesk.com...
+Skipping key 5559BC1A32B8F76B3FCCD9555FA5E5544F010D48 with UID daniel.wallace@gatech.edu...
+Skipping key 5559BC1A32B8F76B3FCCD9555FA5E5544F010D48 with UID daniel.wallace@plangrid.com...
+Skipping key 5559BC1A32B8F76B3FCCD9555FA5E5544F010D48 with UID daniel.wallace12@gmail.com...
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] executor: Starting service: systemd-oomd.service (/usr/lib/systemd/systemd-oomd)
+[INF] process: Started systemd-oomd.service (PID 563)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 564)
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:94 Failed to resolve group 'optical', ignoring: Unknown group[0m
+Creating group 'rfkill' with GID 979.
+[0;1;33m[0;1;38:5:185mNo swap; memory pressure usage will be degraded[0m
+Skipping key 5559BC1A32B8F76B3FCCD9555FA5E5544F010D48 with UID danielwallace@gtmanfred.com...
+Skipping key 5696C003B0854206450C8E5BE613C09CB4440678 with UID daniel@archlinux.org...
+Skipping key 56C3E775E72B0C8B1C0C1BD0B5DB77409B11B601 with UID pgp@maximbaz.com...
+Skipping key 56C3E775E72B0C8B1C0C1BD0B5DB77409B11B601 with UID git@maximbaz.com...
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 565)
+[INF] process: systemd-networkd.service (PID 558) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-logind.service (PID 560) exited with 1
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[NTC] process: Restarting systemd-logind.service
+[INF] process: systemd-timesyncd.service (PID 561) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-journal-upload.service (PID 562) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+Skipping key 56C3E775E72B0C8B1C0C1BD0B5DB77409B11B601 with UID maximbaz@archlinux.org...
+Skipping key 5A2257D19FF7E1E0E415968CE62F853100F0D0F0 with UID gaetan@fenua.org...
+Skipping key 5A2257D19FF7E1E0E415968CE62F853100F0D0F0 with UID bisson@archlinux.org...
+Skipping key 5A2257D19FF7E1E0E415968CE62F853100F0D0F0 with UID bisson@gaati.org...
+Skipping key 5A2257D19FF7E1E0E415968CE62F853100F0D0F0 with UID gaetan.bisson@normalesup.org...
+Skipping key 5A2257D19FF7E1E0E415968CE62F853100F0D0F0 with UID root@vesath.org...
+Skipping key 5B7E3FB71B7F10329A1C03AB771DF6627EDF681F with UID tobias.powalowski@googlemail.com...
+Skipping key 5B7E3FB71B7F10329A1C03AB771DF6627EDF681F with UID tpowa@archlinux.org...
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mFailed to connect to /run/systemd/io.systemd.ManagedOOM: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:95 Failed to resolve group 'optical', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:96 Failed to resolve group 'optical', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:97 Failed to resolve group 'optical', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:98 Failed to resolve group 'optical', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:100 Failed to resolve group 'storage', ignoring: Unknown group[0m
+[INF] process: Started systemd-networkd.service (PID 567)
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+Creating group 'alpm' with GID 978.
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID justin@kromlinger.eu...
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID hashworks@archlinux.org...
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID jk@hash.works...
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID jk@hashworks.net...
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID jkromlinger@hashworks.net...
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID justin.kromlinger@streamonkey.de...
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID mail@hash.works...
+Skipping key 5C81C9D6C8D7475DF65A0C884FE7F4FEAC8EBE67 with UID mail@hashworks.net...
+Skipping key 5E6D49448958B384301F1F22498EF247F340C1E0 with UID fabiscafe@archlinux.org...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:101 Failed to resolve group 'disk', ignoring: Unknown group[0m
+Creating user 'alpm' (Arch Linux Package Management) with UID 978 and GID 978.
+Skipping key 5E7585ADFF106BFFBBA319DC654B877A0864983E with UID martin@flexion.org...
+Skipping key 5E7585ADFF106BFFBBA319DC654B877A0864983E with UID martin+arch@flexion.org...
+Skipping key 5E7585ADFF106BFFBBA319DC654B877A0864983E with UID code@flexion.org...
+Skipping key 5E7585ADFF106BFFBBA319DC654B877A0864983E with UID lug@flexion.plus.com...
+Skipping key 5E7585ADFF106BFFBBA319DC654B877A0864983E with UID martin@wimpress.com...
+Skipping key 5E7585ADFF106BFFBBA319DC654B877A0864983E with UID martin@wimpress.org...
+Skipping key 601F20F1D1BBBF4A78CF5B6DF6B1610B3ECDBC9F with UID crerar@archlinux.org...
+[INF] process: Started systemd-logind.service (PID 568)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+Skipping key 601F20F1D1BBBF4A78CF5B6DF6B1610B3ECDBC9F with UID andrew@crerar.io...
+Skipping key 60939E55F6D5ABF7EE419F08B1A1D3C5F2DF9BC5 with UID me@vild.io...
+Skipping key 60939E55F6D5ABF7EE419F08B1A1D3C5F2DF9BC5 with UID arch@vild.io...
+Skipping key 60939E55F6D5ABF7EE419F08B1A1D3C5F2DF9BC5 with UID dan@dagg.ai...
+Skipping key 60939E55F6D5ABF7EE419F08B1A1D3C5F2DF9BC5 with UID dan@mutate.se...
+Skipping key 60939E55F6D5ABF7EE419F08B1A1D3C5F2DF9BC5 with UID wild@archlinux.org...
+Skipping key 60939E55F6D5ABF7EE419F08B1A1D3C5F2DF9BC5 with UID xwildn00bx@gmail.com...
+Skipping key 63F395DE2D6398BBE458F281F2DBB4931985A992 with UID dieter@plaetinck.be...
+Skipping key 64B13F7117D6E07D661BBCE0FE763A64F5E54FD6 with UID git@rxv.cc...
+[INF] process: Started systemd-timesyncd.service (PID 569)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+Creating group 'bin' with GID 1.
+[INF] process: Started systemd-journal-upload.service (PID 570)
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:102 Failed Skipping key 64B13F7117D6E07D661BBCE0FE763A64F5E54FD6 with UID kpcyrd@archlinux.org...
+Skipping key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A with UID danielmicay@gmail.com...
+Skipping key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A with UID daniel.micay@attestation.app...
+Skipping key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A with UID daniel.micay@grapheneos.org...
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:103 Failed to resolve group 'disk', ignoring: Unknown group[0m
+[INF] process: dbus-org.freedesktop.login1.service (PID 495) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: systemd-oomd.service (PID 563) exited with 1
+[NTC] process: Restarting systemd-oomd.service
+[INF] process: systemd-resolved.service (PID 564) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: krb5-kdc.service (PID 565) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-networkd.service (PID 567) exited with 1
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+Creating user 'bin' (n/a) with UID 1 and GID 1.
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:104 Failed to resolve group 'disk', ignoring: Unknown group[0m
+Creating group 'daemon' with GID 2.
+[0;1;31mRequired --url=/-u option missing.[0m
+Skipping key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A with UID daniel.micay@seamlessupdate.app...
+Skipping key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A with UID security@attestation.app...
+Skipping key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A with UID security@grapheneos.org...
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-logind.service (PID 568) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: systemd-timesyncd.service (PID 569) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-journal-upload.service (PID 570) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:105 Failed to resolve group 'disk', ignoring: Unknown group[0m
+Creating user 'daemon' (n/a) with UID 2 and GID 2.
+Skipping key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A with UID security@seamlessupdate.app...
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 571)
+[NTC] executor: Restarting systemd-oomd.service
+[INF] executor: Starting service: systemd-oomd.service (/usr/lib/systemd/systemd-oomd)
+[INF] process: Started systemd-oomd.service (PID 572)
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:106 Failed to resolve group 'disk', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:107 Failed to resolve group 'disk', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:116 Failed to resolve group 'kvm', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:121 Failed to resolve group 'kvm', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:123 Failed to resolve group 'kvm', ignoring: Unknown group[0m
+[0;1;31m/usr/lib/udev/rules.d/50-udev-default.rules:125 Failed to resolve group 'kvm', ignoring: Unknown group[0m
+Skipping key 6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD with UID me@allanmcrae.com...
+Skipping key 6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD with UID allan@archlinux.org...
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;33m[0;1;38:5:185mNo swap; memory pressure usage will be degraded[0m
+[0;1;31mFailed to connect to /run/systemd/io.systemd.ManagedOOM: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 573)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 574)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 575)
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: Started systemd-logind.service (PID 576)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Creating user 'mail' (n/a) with UID 8 and GID 12.
+[0;1;31m/usr/lib/udev/rules.d/60-block.rules:16 Failed to resolve group 'disk', ignoring: Unknown group[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[INF] process: Started systemd-timesyncd.service (PID 577)
+Skipping key 66BD74A036D522F51DD70A3C7F2A16726521E06D with UID chris@the-brannons.com...
+Skipping key 684148BB25B49E986A4944C55184252D824B18E8 with UID thomas@master-key.archlinux.org...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@astrophysics.eu...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.n.pagani@gmail.com...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID archange@archlinux.org...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@ac-reunion.fr...
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 578)
+[INF] process: dbus-org.freedesktop.login1.service (PID 571) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+Creating user 'ftp' (n/a) with UID 14 and GID 11.
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@ac-versailles.fr...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@cea.fr...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@ens-lyon.fr...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@ens-lyon.org...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@obspm.fr...
+[INF] process: systemd-oomd.service (PID 572) exited with 1
+[NTC] process: Restarting systemd-oomd.service
+[INF] process: systemd-resolved.service (PID 573) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: krb5-kdc.service (PID 574) exited with 1
+Creating group 'http' with GID 33.
+Creating user 'http' (n/a) with UID 33 and GID 33.
+Creating user 'nobody' (Kernel Overflow User) with UID 65534 and GID 65534.
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@u-psud.fr...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID bruno.pagani@universite-paris-saclay.fr...
+Skipping key 69DA34D78FE0EFD596AC6D049D893EC4DAAF9129 with UID pagani@iap.fr...
+Refreshing key 69E6471E3AE065297529832E6BA0F5A2037F4F41 with UID demize@master-key.archlinux.org...
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: s[INF] process: Started dbus-org.freedesktop.login1.service (PID 579)
+[NTC] executor: Restarting systemd-oomd.service
+[INF] executor: Starting service: systemd-oomd.service (/usr/lib/systemd/systemd-oomd)
+[INF] process: Started systemd-oomd.service (PID 580)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] process: Started systemd-resolved.service (PID 581)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 582)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 583)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 584)
+[INF] process: systemd-journal-upload.service (PID 578) exited with 1
+Creating group 'dbus' with GID 81.
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 585)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+Creating user 'dbus' (System Message Bus) with UID 81 and GID 81.
+[0;1;33m[0;1;38:5:185mNo swap; memory pressure usage will be degraded[0m
+[0;1;31mFailed to connect to /run/systemd/io.systemd.ManagedOOM: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+[INF] process: systemd-logind.service (PID 576) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started systemd-logind.service (PID 586)
+[INF] process: systemd-resolved.service (PID 581) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+Creating group 'systemd-coredump' with GID 977.
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 587)
+[INF] process: dbus-org.freedesktop.login1.service (PID 579) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: krb5-kdc.service (PID 582) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+Creating user 'systemd-coredump' (systemd Core Dumper) with UID 977 and GID 977.
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 588)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 589)
+Creating group 'systemd-network' with GID 976.
+[0;1;31m/usr/lib/udev/rules.d/60-rfkill.rules:1 Failed to resolve group 'rfkill', ignoring: Unknown group[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+[0;1;31mRequired --url=/-u option missing.[0m
+[0;1;31m/usr/lib/udev/rules.d/60-tpm-udev.rules:3 Failed to resolve user 'tss', ignoring: Unknown user[0m
+Creating user 'systemd-network' (systemd Network Management) with UID 976 and GID 976.
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: systemd-timesyncd.service (PID 584) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-networkd.service (PID 583) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-journal-upload.service (PID 585) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 591)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+Creating group 'systemd-oom' with GID 975.
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31m/usr/lib/udev/rules.d/60-tpm-udev.rules:4 Failed to r[NTC] process: Restarting systemd-resolved.service
+[INF] process: dbus-org.freedesktop.login1.service (PID 588) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+Creating group 'systemd-journal-remote' with GID 974.
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[INF] process: systemd-oomd.service (PID 580) exited with 1
+[NTC] process: Restarting systemd-oomd.service
+[INF] process: krb5-kdc.service (PID 589) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-timesyncd.service (PID 591) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[NTC] executor: Restarting systemd-logind.service
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Creating user 'systemd-journal-remote' (systemd Journal Remote) with UID 974 and GID 974.
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started systemd-logind.service (PID 596)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 597)
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[0;1;31mRequired --url=/-u option missing.[0m
+Creating group 'systemd-resolve' with GID 973.
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 598)
+[NTC] executor: Restarting systemd-oomd.service
+[INF] executor: Starting service: systemd-oomd.service (/usr/lib/systemd/systemd-oomd)
+[INF] process: Started systemd-oomd.service (PID 599)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+Creating user 'systemd-resolve' (systemd Resolver) with UID 973 and GID 973.
+[INF] process: Started krb5-kdc.service (PID 600)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 601)
+[INF] process: systemd-networkd.service (PID 592) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-journal-upload.service (PID 593) exited with 1
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 602)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[0;1;33m[0;1;38:5:185mNo swap; memory pressure usage will be degraded[0m
+[0;1;31mFailed to connect to /run/systemd/io.systemd.ManagedOOM: No such file or directory[0m
+[0;1;31mFailed to start up daemon: No such file or directory[0m
+Creating group 'systemd-timesync' with GID 972.
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: Started systemd-journal-upload.service (PID 603)
+[INF] process: systemd-logind.service (PID 596) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: systemd-resolved.service (PID 597) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: dbus-org.freedesktop.login1.service (PID 598) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: krb5-kdc.service (PID 600) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-timesyncd.service (PID 601) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 972 and GID 972.
+gpg: error retrieving 'demize@master-key.archlinux.org' via WKD: Network is unreachable
+gpg: error reading key: Network is unreachable
+Creating group 'tss' with GID 971.
+Creating user 'tss' (tss user for tpm2) with UID 971 and GID 971.
+[INF] process: Started systemd-logind.service (PID 604)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+Skipping key 69F8E5E5E85F771020A0777C3D309011083BA25E with UID carsme@archlinux.org...
+Skipping key 6C7F7F22E0152A6FD5728592DAD6F3056C897266 with UID email@alex19ep.me...
+Skipping key 6C7F7F22E0152A6FD5728592DAD6F3056C897266 with UID aarnaarn2@gmail.com...
+Skipping key 6C7F7F22E0152A6FD5728592DAD6F3056C897266 with UID alex19ep@archlinux.org...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID chris.rebischke@archlinux.org...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID chris.rebischke@archlinux.org...
+[0;1;31mRequired --url=/-u option missing.[0m
+Creating group 'uuidd' with GID 970.
+[INF] process: Started systemd-resolved.service (PID 605)
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 606)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+Creating user 'uuidd' (UUID generator helper daemon) with UID 970 and GID 970.
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID christian.rebischke@tu-clausthal.de...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID chris.rebischke@gmail.com...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID shibumi@milliways.info...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID chris.rebischke@posteo.de...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID chris@nullday.de...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID chris@shibumi.dev...
+Skipping key 6DAF7B808F9DF25139620000D21461E3DFE2060D with UID christian.rebischke@mailbox.org...
+Skipping key 6EA3F3F3B9082632A9CBE931D53A0445B47A0DAB with UID connor.behan@gmail.com...
+Skipping key 717026A9D4779FC53940726640F557B731496106 with UID gginiu@gmail.com...
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: Started krb5-kdc.service (PID 607)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 608)
+[INF] process: systemd-networkd.service (PID 602) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-journal-upload.service (PID 603) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-networkd.service
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 609)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 610)
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+Skipping key 75BD80E4D834509F6E740257B1B73B02CC52A02A with UID diabonas@master-key.archlinux.org...
+Skipping key 76B4192E902C0A52642C63C273B8ED52F1D357C1 with UID l.jirkovsky@gmail.com...
+Skipping key 779CD2942629B7FA04AB8F172E89012331361F01 with UID arcanis@archlinux.org...
+Skipping key 779CD2942629B7FA04AB8F172E89012331361F01 with UID arcanis.arch@gmail.com...
+Skipping key 779CD2942629B7FA04AB8F172E89012331361F01 with UID darkarcanis@mail.ru...
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: systemd-logind.service (PID 604) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: systemd-resolved.service (PID 605) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[0;1;31m/etc/gshadow: Group "sys" already exists.[0m
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[INF] process: dbus-org.freedesktop.login1.service (PID 606) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: krb5-kdc.service (PID 607) exited with 1
+Skipping key 779CD2942629B7FA04AB8F172E89012331361F01 with UID esalexeev@gmail.com...
+Skipping key 7FA647CD89891DEDC060287BB9113D1ED21E1A55 with UID kaitocracy@gmail.com...
+Skipping key 80247D99EABD3A4D1E3A1836E85B8683EB48BC95 with UID dbermond@archlinux.org...
+Skipping key 81D7F8241DB38BC759C80FCE3A726C6170E80477 with UID roman@archlinux.org...
+Skipping key 8218F88849AAC522E94CF470A5E9288C4FA415FA with UID jan.steffens@gmail.com...
+Skipping key 83BC8889351B5DEBBB68416EB8AC08600F108CDF with UID jan.steffens@gmail.com...
+Skipping key 83BC8889351B5DEBBB68416EB8AC08600F108CDF with UID heftig@archlinux.org...
+Skipping key 86CFFCA918CF3AF47147588051E8B148A9999C34 with UID foutrelis@archlinux.org...
+Skipping key 86CFFCA918CF3AF47147588051E8B148A9999C34 with UID foutrelis@gmail.com...
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Skipping key 8742F7535E7B394A1B048163332C9C40F40D2072 with UID jsteel@aur.archlinux.org...
+Skipping key 8742F7535E7B394A1B048163332C9C40F40D2072 with UID jsteel@archlinux.org...
+Skipping key 8742F7535E7B394A1B048163332C9C40F40D2072 with UID mail@jsteel.org...
+Skipping key 8840BD07FC24CB7CE394A07CCF7037A4F27FB7DA with UID speps@aur.archlinux.org...
+Skipping key 8840BD07FC24CB7CE394A07CCF7037A4F27FB7DA with UID speps@gmx.com...
+[0;1;31mRequired --url=/-u option missing.[0m
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-timesyncd.service (PID 608) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-networkd.service (PID 609) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-journal-upload.service (PID 610) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-logind.service
+Skipping key 8840BD07FC24CB7CE394A07CCF7037A4F27FB7DA with UID speps@gmx.com...
+Skipping key 89E7B9331C4AE7D7FAF7D305C132293954BBE4AD with UID spupykin@archlinux.org...
+Skipping key 8A9BC5819C54FEB3DC2A9B48C32217F6F13FF192 with UID xyproto@archlinux.org...
+Skipping key 8AA2213C8464C82D879C8127D4B58E897A929F2E with UID torxed@archlinux.org...
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started systemd-logind.service (PID 611)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+Skipping key 8CF934E339CAD8ABF342E822E711306E3C4F88BC with UID timothy.redaelli@gmail.com...
+Skipping key 8E1992167465DB5FB045557CB02854ED753E0F1F with UID anatolik@archlinux.org...
+Skipping key 8E1992167465DB5FB045557CB02854ED753E0F1F with UID anatol.pomozov@gmail.com...
+Skipping key 8F76BEEA0289F9E1D3E229C05F946DED983D4366 with UID jrcd83@gmail.com...
+Skipping key 8FC15A064950A99DD1BD14DD39E4B877E62EB915 with UID sh@lutzhaase.com...
+[INF] process: Started systemd-resolved.service (PID 612)
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 613)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+Skipping key 8FC15A064950A99DD1BD14DD39E4B877E62EB915 with UID svenstaro@archlinux.org...
+Skipping key 8FC15A064950A99DD1BD14DD39E4B877E62EB915 with UID svenstaro@gmail.com...
+Skipping key 8FE6A7D4CC42C83C9BCCA8E32DA2ACC3ECE4DCE6 with UID tcanabrava@archlinux.org...
+Skipping key 903BAB73640EB6D65533EFF3468F122CE8162295 with UID santiago@archlinux.org...
+Skipping key 903BAB73640EB6D65533EFF3468F122CE8162295 with UID torresariass@gmail.com...
+Skipping key 903BAB73640EB6D65533EFF3468F122CE8162295 with UID santiagotorres@purdue.edu...
+Skipping key 903BAB73640EB6D65533EFF3468F122CE8162295 with UID santiago@nyu.edu...
+Skipping key 91BD8815FE0040FA7FF5D68754C28F4FF5A1A949 with UID dave@sleepmap.de...
+Skipping key 91BD8815FE0040FA7FF5D68754C28F4FF5A1A949 with UID dave@c-base.org...
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: Started krb5-kdc.service (PID 614)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 615)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+Skipping key 91BD8815FE0040FA7FF5D68754C28F4FF5A1A949 with UID david.runge@campus.tu-berlin.de...
+Skipping key 91BD8815FE0040FA7FF5D68754C28F4FF5A1A949 with UID runge@pool.math.tu-berlin.de...
+Skipping key 91FFE0700E80619CEB73235CA88E23E377514E00 with UID florian@master-key.archlinux.org...
+Skipping key 9437DD3815A7A9169E3D3946AFF5D95098BC6FF5 with UID alucryd@alucryd.xyz...
+Skipping key 9437DD3815A7A9169E3D3946AFF5D95098BC6FF5 with UID alucryd@archlinux.org...
+Skipping key 9437DD3815A7A9169E3D3946AFF5D95098BC6FF5 with UID alucryd@gmail.com...
+Skipping key 9515D8A8EAB88E49BB65EDBCE6B456CAF15447D5 with UID cinelli@aur.archlinux.org...
+[INF] process: Started systemd-networkd.service (PID 616)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 617)
+[INF] process: systemd-sysusers.service (PID 332) exited with 1
+[INF] process: systemd-logind.service (PID 611) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: dbus-org.freedesktop.login1.service (PID 613) exited with 1
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Skipping key 9515D8A8EAB88E49BB65EDBCE6B456CAF15447D5 with UID cinelli.federico@gmail.com...
+Skipping key 95220BE99CE6FF778AE0DC670F65C7D881506130 with UID alucryd@gmail.com...
+Skipping key 95220BE99CE6FF778AE0DC670F65C7D881506130 with UID alucryd@alucryd.xyz...
+Skipping key 95220BE99CE6FF778AE0DC670F65C7D881506130 with UID alucryd@archlinux.org...
+Skipping key 954A3772D62EF90E4B31FBC6C91A9911192C187A with UID quae@daurnimator.com...
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: systemd-resolved.service (PID 612) exited with 1
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: krb5-kdc.service (PID 614) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[INF] process: systemd-networkd.service (PID 616) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[NTC] executor: Restarting systemd-logind.service
+Skipping key 954A3772D62EF90E4B31FBC6C91A9911192C187A with UID daurnimator@archlinux.org...
+Skipping key 962855F072C7A01846405864FCF3C8CB5CF9C8D4 with UID rodseth@gmail.com...
+Skipping key 9674D4ED3DFB6ADCC4F9F1EA1C736AEF96402E7C with UID segaja@archlinux.org...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID pgp@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID mail@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID blog@nicohood.de...
+[0;1;31mRequired --url=/-u option missing.[0m
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started systemd-logind.service (PID 618)
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 619)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 620)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID nico-2006@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID shop@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID info@bikefittingfinder.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID archlinux@nicohood.de...
+[INF] process: Started krb5-kdc.service (PID 621)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 622)
+[INF] process: systemd-timesyncd.service (PID 615) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[INF] process: systemd-journal-upload.service (PID 617) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID aur@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID blog@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID git@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID info@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID mooltipass@nicohood.de...
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[INF] process: Started systemd-timesyncd.service (PID 623)
+[NTC] executor: Restarting systemd-journal-upload.service
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID nicohood@archlinux.org...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID wohnung@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID inbox@nicohood.de...
+Skipping key 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161 with UID outbox@nicohood.de...
+[INF] process: Started systemd-journal-upload.service (PID 624)
+[INF] process: systemd-logind.service (PID 618) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: dbus-org.freedesktop.login1.service (PID 619) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: systemd-resolved.service (PID 620) exited with 1
+Skipping key 991F6E3F0765CF6295888586139B09DA5BF0D338 with UID dvzrv@archlinux.org...
+Skipping key 9D74DF6F91B7BDABD5815CA84AC5588F941C2A25 with UID arojas@archlinux.org...
+Skipping key 9D74DF6F91B7BDABD5815CA84AC5588F941C2A25 with UID arojas@us.es...
+Skipping key 9D74DF6F91B7BDABD5815CA84AC5588F941C2A25 with UID nqn1976@gmail.com...
+[NTC] process: Restarting systemd-resolved.service
+[INF] process: krb5-kdc.service (PID 621) exited with 1
+[NTC] process: Restarting krb5-kdc.service
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+Skipping key 9D74DF6F91B7BDABD5815CA84AC5588F941C2A25 with UID nqn76sw@gmail.com...
+Skipping key A2FF3A36AAA56654109064AB19802F8B0D70FC30 with UID jan.steffens@gmail.com...
+Skipping key A2FF3A36AAA56654109064AB19802F8B0D70FC30 with UID heftig@archlinux.org...
+Skipping key A2FF3A36AAA56654109064AB19802F8B0D70FC30 with UID jan.steffens@ltnglobal.com...
+[INF] process: systemd-networkd.service (PID 622) exited with 1
+[NTC] process: Restarting systemd-networkd.service
+[INF] process: systemd-timesyncd.service (PID 623) exited with 1
+[NTC] process: Restarting systemd-timesyncd.service
+[NTC] executor: Restarting systemd-logind.service
+[INF] executor: Starting service: systemd-logind.service (/usr/lib/systemd/systemd-logind)
+[0;1;31mRequired --url=/-u option missing.[0m
+Skipping key A314827C4E4250A204CE6E13284FC34C8E4B1A25 with UID thomas@bchlr.de...
+Skipping key A314827C4E4250A204CE6E13284FC34C8E4B1A25 with UID thomas.baechler@gmx.de...
+Skipping key A314827C4E4250A204CE6E13284FC34C8E4B1A25 with UID thomas@archlinux.org...
+Skipping key A4CBEA7974898599195E4FEC46EC46F39F3E2EF1 with UID rgacogne@archlinux.org...
+Skipping key A5CA9D5515DC2CA73DF748CA5C2E46A0F53A76ED with UID dpmcgee@gmail.com...
+Skipping key A5CA9D5515DC2CA73DF748CA5C2E46A0F53A76ED with UID dan@archlinux.org...
+Skipping key A5CA9D5515DC2CA73DF748CA5C2E46A0F53A76ED with UID toofishes@toofishes.net...
+Skipping key A667E8A1B61D07A50FC430DF69DF1F2EB44B05BE with UID tensor5@archlinux.org...
+Skipping key A84B8DC73AB832067BE54C3C976AC6FA3B94FA10 with UID info@jandegrootict.nl...
+[INF] process: Started systemd-logind.service (PID 625)
+[NTC] executor: Restarting dbus-org.freedesktop.login1.service
+[INF] executor: Starting service: dbus-org.freedesktop.login1.service (/usr/lib/systemd/systemd-logind)
+[INF] process: Started dbus-org.freedesktop.login1.service (PID 626)
+[NTC] executor: Restarting systemd-resolved.service
+[INF] executor: Starting service: systemd-resolved.service (/usr/lib/systemd/systemd-resolved)
+[INF] process: Started systemd-resolved.service (PID 627)
+[NTC] executor: Restarting krb5-kdc.service
+[INF] executor: Starting service: krb5-kdc.service (/usr/bin/krb5kdc)
+[INF] process: Started krb5-kdc.service (PID 628)
+[NTC] executor: Restarting systemd-networkd.service
+[INF] executor: Starting service: systemd-networkd.service (/usr/lib/systemd/systemd-networkd)
+[INF] process: Started systemd-networkd.service (PID 629)
+[NTC] executor: Restarting systemd-timesyncd.service
+[INF] executor: Starting service: systemd-timesyncd.service (/usr/lib/systemd/systemd-timesyncd)
+[INF] process: Started systemd-timesyncd.service (PID 630)
+Skipping key A84B8DC73AB832067BE54C3C976AC6FA3B94FA10 with UID jgc@archlinux.org...
+Skipping key A9B6710D760F6617C530746EC847B6AEB0544167 with UID tensor5@gmail.com...
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[INF] process: systemd-journal-upload.service (PID 624) exited with 1
+[NTC] process: Restarting systemd-journal-upload.service
+[NTC] executor: Restarting systemd-journal-upload.service
+krb5kdc: cannot initialize realm ATHENA.MIT.EDU - see log file for details
+[0;1;31mFailed to connect to system bus: No such file or directory[0m
+[0;1;31mFailed to fully start up daemon: No such file or directory[0m
+[0;1;31mCannot resolve user name systemd-resolve: No such process[0m
+[0;1;31mCannot resolve user name systemd-timesync: No such process[0m
+[0;1;31mCannot resolve user name systemd-network: No such process[0m
+Skipping key AB19265E5D7D20687D303246BA1DFB64FFF979E7 with UID allan@master-key.archlinux.org...
+Skipping key ADC8A1FCC15E01D45310419E94657AB20F2A092B with UID andyrtr@archlinux.org...
+Skipping key ADC8A1FCC15E01D45310419E94657AB20F2A092B with UID andreas.radke@mailbox.org...
+Skipping key ADC8A1FCC15E01D45310419E94657AB20F2A092B with UID andyrtr@mailbox.org...
+Skipping key B1F2C889CB2CCB2ADA36D963097D629E437520BD with UID vegai@iki.fi...
+[INF] executor: Starting service: systemd-journal-upload.service (/usr/lib/systemd/systemd-journal-upload)
+[INF] process: Started systemd-journal-upload.service (PID 631)
+[INF] process: systemd-logind.service (PID 625) exited with 1
+[NTC] process: Restarting systemd-logind.service
+[INF] process: dbus-org.freedesktop.login1.service (PID 626) exited with 1
+[NTC] process: Restarting dbus-org.freedesktop.login1.service
+[INF] process: systemd-resolved.service (PID 627) exited with 1
+Skipping

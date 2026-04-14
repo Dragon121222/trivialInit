@@ -1,0 +1,8 @@
+build/
+build-*/
+qemu/rootfs/
+qemu/mnt/
+qemu/*.cpio.gz
+qemu/*.qcow2
+compile_commands.json
+.cache/
