@@ -35,6 +35,7 @@ add_library(trivialInit_core STATIC
     src/systemd/unit_parser.cpp
     src/systemd/unit_scanner.cpp
     src/systemd/unit_executor.cpp
+    src/systemd/specifiers.cpp
     src/init/filesystem.cpp
     src/init/process.cpp
     src/init/signal_handler.cpp
@@ -74,3 +75,8 @@ if(TINIT_BUILD_TESTS)
     target_link_libraries(test_mixin_composition PRIVATE trivialInit_core)
     add_test(NAME mixin_composition COMMAND test_mixin_composition)
 endif()
+
+# Add test executable:
+add_executable(test_specifiers test/test_specifiers.cpp src/systemd/specifiers.cpp)
+target_include_directories(test_specifiers PRIVATE include)
+add_test(NAME test_specifiers COMMAND test_specifiers)

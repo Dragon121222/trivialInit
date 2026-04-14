@@ -175,6 +175,8 @@ tty:x:5:
 nobody:x:65534:
 GROUP
 
+echo 'root::0:0:root:/root:/bin/sh' > "$ROOTFS_DIR/etc/passwd"
+
 # Pack initramfs
 echo "Packing initramfs..."
 (cd "$ROOTFS_DIR" && find . | cpio -o -H newc 2>/dev/null | gzip -9 > "$INITRAMFS")

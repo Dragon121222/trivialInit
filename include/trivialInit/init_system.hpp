@@ -1,11 +1,5 @@
 #pragma once
 
-/// InitSystem — the final composed type
-///
-/// All mixin axes collapse into one class via MixinCompose.
-/// Phase dispatch uses qualified calls: FilesystemMixin<InitSystem>::execute(...)
-/// to avoid ambiguity from multiple inherited execute() overloads.
-
 #include "trivialInit/mixins/mixin_base.hpp"
 #include "trivialInit/mixins/journal.hpp"
 #include "trivialInit/mixins/filesystem.hpp"
@@ -13,6 +7,7 @@
 #include "trivialInit/mixins/process.hpp"
 #include "trivialInit/mixins/unit_scan.hpp"
 #include "trivialInit/mixins/unit_parse.hpp"
+#include "trivialInit/mixins/socket.hpp"
 #include "trivialInit/mixins/unit_exec.hpp"
 #include "trivialInit/mixins/tui.hpp"
 
@@ -26,38 +21,42 @@ class InitSystem : public MixinCompose<
     ProcessMixin,
     UnitScanMixin,
     UnitParseMixin,
+    SocketMixin,        // ← after parse, before exec
     UnitExecMixin,
     TuiMixin
 > {
 public:
-    // Aliases for qualified dispatch
     using Fs    = FilesystemMixin<InitSystem>;
     using Sig   = SignalMixin<InitSystem>;
     using Scan  = UnitScanMixin<InitSystem>;
     using Parse = UnitParseMixin<InitSystem>;
+    using Sock  = SocketMixin<InitSystem>;
     using Exec  = UnitExecMixin<InitSystem>;
     using Tui   = TuiMixin<InitSystem>;
 
-    /// Run the full init sequence
     int run() {
         log(LogLevel::Info, "init", "trivialInit starting");
 
         int rc;
-        if ((rc = Fs::execute(phase::EarlyMount{})))           return rc;
-        if ((rc = Sig::execute(phase::SignalSetup{})))          return rc;
-        if ((rc = Scan::execute(phase::UnitDiscovery{})))       return rc;
-        if ((rc = Parse::execute(phase::UnitParse{})))          return rc;
-        if ((rc = Exec::execute(phase::DependencyResolve{})))   return rc;
-        if ((rc = Exec::execute(phase::UnitExecute{})))         return rc;
+        if ((rc = Fs::execute(phase::EarlyMount{})))          return rc;
+        if ((rc = Sig::execute(phase::SignalSetup{})))         return rc;
+        if ((rc = Scan::execute(phase::UnitDiscovery{})))      return rc;
+        if ((rc = Parse::execute(phase::UnitParse{})))         return rc;
+        if ((rc = Sock::execute(phase::SocketBind{})))         return rc;
+        if ((rc = Exec::execute(phase::DependencyResolve{})))  return rc;
+        if ((rc = Exec::execute(phase::UnitExecute{})))        return rc;
+
+        // Register Accept=yes socket fds with epoll for on-demand activation
+        Sock::register_accept_sockets(epoll_fd_);
 
         // TUI is optional, non-fatal
         Tui::execute(phase::TuiStart{});
 
         log(LogLevel::Info, "init", "Entering main loop");
 
-        // Main loop
         while (!shutdown_requested_) {
-            poll_once(tui_active_ ? 100 : 1000);
+            // poll_once returns per-fd events; we need to handle socket fds too
+            poll_once_with_sockets(tui_active_ ? 100 : 1000);
             process_restarts();
 
             if (tui_active_) {
@@ -68,33 +67,26 @@ public:
             }
         }
 
-        // Shutdown
         log(LogLevel::Info, "init", "Shutting down");
         shutdown_tui();
 
-        // Stop all services in reverse order
-        for (auto it = exec_order_.rbegin(); it != exec_order_.rend(); ++it) {
+        for (auto it = exec_order_.rbegin(); it != exec_order_.rend(); ++it)
             stop_unit(*it);
-        }
 
-        // Wait for graceful exit
-        for (int i = 0; i < 50 && active_count() > 0; ++i) {
+        for (int i = 0; i < 50 && active_count() > 0; ++i)
             poll_once(100);
-        }
 
-        // SIGKILL stragglers
-        for (auto& [pid, tp] : processes_) {
+        for (auto& [pid, tp] : processes_)
             ::kill(pid, SIGKILL);
-        }
         poll_once(200);
 
+        Sock::close_all_sockets();
         Fs::execute(phase::Shutdown{});
 
         log(LogLevel::Info, "init", "Goodbye.");
         return 0;
     }
 
-    /// Run as monitor (not PID 1) — TUI only, no execution
     int run_monitor() {
         log(LogLevel::Info, "monitor", "trivialInit monitor starting");
 
@@ -104,13 +96,11 @@ public:
 
 #ifndef TINIT_NO_TUI
         init_tui();
-
         while (true) {
             render();
             if (!handle_input()) break;
             napms(100);
         }
-
         shutdown_tui();
 #else
         log(LogLevel::Info, "monitor", "TUI disabled — printing unit summary");
@@ -120,6 +110,25 @@ public:
         }
 #endif
         return 0;
+    }
+
+private:
+    /// Extended poll_once that also dispatches Accept=yes socket events.
+    int poll_once_with_sockets(int timeout_ms) {
+        struct epoll_event events[16];
+        int n = epoll_wait(epoll_fd_, events, 16, timeout_ms);
+        if (n < 0 && errno != EINTR) return -1;
+
+        for (int i = 0; i < n; ++i) {
+            int fd = events[i].data.fd;
+            if (fd == signal_fd_) {
+                drain_signals();
+            } else if (fd_to_socket_.contains(fd)) {
+                // Accept=yes: accept one connection and spawn service instance
+                Sock::accept_ready(fd);
+            }
+        }
+        return n;
     }
 };
 

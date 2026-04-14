@@ -9,22 +9,21 @@
 
 namespace tinit {
 
-/// Systemd-compatible unit file search paths (in priority order)
 inline const std::vector<std::string> kUnitSearchPaths = {
-    "/etc/systemd/system",          // admin overrides (highest priority)
-    "/run/systemd/system",          // runtime units
-    "/usr/lib/systemd/system",      // package-installed units
-    "/lib/systemd/system",          // legacy path
+    "/etc/systemd/system",
+    "/run/systemd/system",
+    "/usr/lib/systemd/system",
+    "/lib/systemd/system",
 };
 
 inline const std::vector<std::string> kSupportedExtensions = {
-    ".service", ".target", ".mount",
+    ".service", ".target", ".mount", ".socket",
 };
 
 template <typename Derived>
 struct UnitScanMixin : MixinBase<Derived, UnitScanMixin<Derived>> {
     std::vector<std::string> discovered_paths_;
-    std::set<std::string> discovered_names_;  // dedup by name (highest priority wins)
+    std::set<std::string>    discovered_names_;
 
     int execute(phase::UnitDiscovery) {
         auto& s = this->self();
@@ -41,14 +40,11 @@ struct UnitScanMixin : MixinBase<Derived, UnitScanMixin<Derived>> {
 
                 auto filename = entry.path().filename().string();
 
-                // Check extension
                 bool supported = false;
-                for (const auto& ext : kSupportedExtensions) {
+                for (const auto& ext : kSupportedExtensions)
                     if (filename.ends_with(ext)) { supported = true; break; }
-                }
                 if (!supported) continue;
 
-                // Priority: first path wins (highest priority dirs are first)
                 if (discovered_names_.contains(filename)) continue;
 
                 discovered_names_.insert(filename);
@@ -57,17 +53,13 @@ struct UnitScanMixin : MixinBase<Derived, UnitScanMixin<Derived>> {
             }
         }
 
-        s.log_fmt(LogLevel::Info, "scanner", "Discovered {} unit files", discovered_paths_.size());
+        s.log_fmt(LogLevel::Info, "scanner",
+            "Discovered {} unit files", discovered_paths_.size());
         return 0;
     }
 
-    /// Get list of discovered unit file paths
     const std::vector<std::string>& unit_paths() const { return discovered_paths_; }
-
-    /// Check if a specific unit was found
-    bool has_unit(const std::string& name) const {
-        return discovered_names_.contains(name);
-    }
+    bool has_unit(const std::string& name) const { return discovered_names_.contains(name); }
 };
 
 } // namespace tinit
