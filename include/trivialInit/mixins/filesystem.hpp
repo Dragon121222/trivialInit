@@ -29,6 +29,7 @@ inline constexpr MountPoint kEarlyMounts[] = {
     {"devpts",   "/dev/pts",       "devpts",   MS_NOSUID|MS_NOEXEC,           "gid=5,mode=620"},
     {"tmpfs",    "/run",           "tmpfs",    MS_NOSUID|MS_NODEV,            "mode=0755"},
     {"cgroup2",  "/sys/fs/cgroup", "cgroup2",  MS_NOSUID|MS_NODEV|MS_NOEXEC, nullptr},
+    {"tmpfs",    "/tmp",           "tmpfs",    MS_NOSUID|MS_NODEV,            "mode=1777"},
 };
 
 /// Runtime directories that need pre-creation.

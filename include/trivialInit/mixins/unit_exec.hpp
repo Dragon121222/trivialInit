@@ -389,6 +389,17 @@ struct UnitExecMixin : MixinBase<Derived, UnitExecMixin<Derived>> {
         if (unit.what.empty() || unit.where.empty()) {
             s.log_fmt(LogLevel::Warning,"executor","{}: incomplete mount unit",name); return;
         }
+
+        // Check if already mounted (e.g. /tmp pre-mounted in EarlyMount)
+        struct stat st, pst{};
+        std::string parent = unit.where + "/..";
+        if (::stat(unit.where.c_str(), &st) == 0 &&
+            ::stat(parent.c_str(), &pst) == 0 &&
+            st.st_dev != pst.st_dev) {
+            s.log_fmt(LogLevel::Debug,"executor","{}: already mounted, skipping",name);
+            return;
+        }
+
         s.log_fmt(LogLevel::Info,"executor","Mounting {} on {}",unit.what,unit.where);
         ::mkdir(unit.where.c_str(), 0755);
         auto [flags, data] = detail::parse_mount_options(unit.options);
