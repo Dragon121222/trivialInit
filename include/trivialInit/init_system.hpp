@@ -21,7 +21,7 @@ class InitSystem : public MixinCompose<
     ProcessMixin,
     UnitScanMixin,
     UnitParseMixin,
-    SocketMixin,        // ← after parse, before exec
+    SocketMixin,
     UnitExecMixin,
     TuiMixin
 > {
@@ -46,18 +46,15 @@ public:
         if ((rc = Exec::execute(phase::DependencyResolve{})))  return rc;
         if ((rc = Exec::execute(phase::UnitExecute{})))        return rc;
 
-        // Register Accept=yes socket fds with epoll for on-demand activation
         Sock::register_accept_sockets(epoll_fd_);
-
-        // TUI is optional, non-fatal
         Tui::execute(phase::TuiStart{});
 
         log(LogLevel::Info, "init", "Entering main loop");
 
         while (!shutdown_requested_) {
-            // poll_once returns per-fd events; we need to handle socket fds too
             poll_once_with_sockets(tui_active_ ? 100 : 1000);
             process_restarts();
+            maybe_fix_runtime_dirs();
 
             if (tui_active_) {
                 render();
@@ -89,46 +86,50 @@ public:
 
     int run_monitor() {
         log(LogLevel::Info, "monitor", "trivialInit monitor starting");
-
         Scan::execute(phase::UnitDiscovery{});
         Parse::execute(phase::UnitParse{});
         Exec::execute(phase::DependencyResolve{});
-
 #ifndef TINIT_NO_TUI
         init_tui();
-        while (true) {
-            render();
-            if (!handle_input()) break;
-            napms(100);
-        }
+        while (true) { render(); if (!handle_input()) break; napms(100); }
         shutdown_tui();
 #else
-        log(LogLevel::Info, "monitor", "TUI disabled — printing unit summary");
         for (const auto& name : exec_order_) {
             const auto* u = find_unit(name);
-            if (u) log_fmt(LogLevel::Info, "monitor", "  {} — {}", name, u->description);
+            if (u) log_fmt(LogLevel::Info,"monitor","  {} — {}",name,u->description);
         }
 #endif
         return 0;
     }
 
 private:
-    /// Extended poll_once that also dispatches Accept=yes socket events.
     int poll_once_with_sockets(int timeout_ms) {
         struct epoll_event events[16];
         int n = epoll_wait(epoll_fd_, events, 16, timeout_ms);
         if (n < 0 && errno != EINTR) return -1;
-
         for (int i = 0; i < n; ++i) {
             int fd = events[i].data.fd;
-            if (fd == signal_fd_) {
+            if (fd == signal_fd_)
                 drain_signals();
-            } else if (fd_to_socket_.contains(fd)) {
-                // Accept=yes: accept one connection and spawn service instance
+            else if (fd_to_socket_.contains(fd))
                 Sock::accept_ready(fd);
-            }
         }
         return n;
+    }
+
+    /// Once systemd-sysusers exits (it's no longer in unit_to_pid_),
+    /// re-chown runtime directories with the now-populated user database.
+    void maybe_fix_runtime_dirs() {
+        if (runtime_dirs_chowned_) return;
+        // Check sysusers has been started and has since exited
+        bool was_started = false;
+        for (auto& n : exec_order_)
+            if (n == "systemd-sysusers.service") { was_started = true; break; }
+        if (!was_started) return;
+        if (unit_to_pid_.contains("systemd-sysusers.service")) return;
+        // It ran and exited — apply ownership
+        log(LogLevel::Info, "fs", "Applying deferred runtime directory ownership");
+        Fs::fix_runtime_dir_ownership();
     }
 };
 
